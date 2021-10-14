@@ -23,7 +23,7 @@ namespace DAL
             cmd = conn.CreateCommand();
         }
         //select query
-        public DataSet ExcuteQueryDataSet(string strSql, CommandType ct, params SqlParameter[] p)
+        public DataSet ExecuteQueryDataSet(string strSql, CommandType ct, params SqlParameter[] p)
         {
             cmd.CommandText = strSql;
             cmd.CommandType = ct;
@@ -32,7 +32,7 @@ namespace DAL
             adp.Fill(ds);
             return ds;
         }
-        public string ExcuteQueryXML(string strSql, CommandType ct, params SqlParameter[] p)
+        public string ExecuteQueryXML(string strSql, CommandType ct, params SqlParameter[] p)
         {
             cmd.CommandText = strSql;
             cmd.CommandType = ct;
@@ -42,7 +42,7 @@ namespace DAL
             return ds.GetXml();
         }
         // action query
-        public bool MyExcuteNonQuery(string strSql, CommandType ct, ref string error, params SqlParameter[] param)
+        public bool MyExecuteNonQuery(string strSql, CommandType ct, ref string error, params SqlParameter[] param)
         {
             bool check = false;
             conn.Open();
