@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS;
 
 namespace FORM
 {
@@ -15,6 +16,13 @@ namespace FORM
         public frmLogin()
         {
             InitializeComponent();
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            LoaiThanhVienBUS db = new LoaiThanhVienBUS();
+            DataSet dataSet = db.getLoaiThanhVien();
+            dataGridView1.DataSource = dataSet.Tables[0];
         }
     }
 }

@@ -19,7 +19,7 @@ namespace BUS
 
         public DataSet getLoaiThanhVien()
         {
-            return null;
+            return db.ExecuteQueryDataSet("spGetLoaiThanhVien", CommandType.StoredProcedure);
         }
 
         public bool insertLoaiThanhVien(ref string err,

@@ -19,7 +19,7 @@ namespace BUS
 
         public DataSet getTacGia()
         {
-            return null;
+            return db.ExecuteQueryDataSet("spGetTacGia", CommandType.StoredProcedure);
         }
 
         public bool insertTacGia(ref string err,
