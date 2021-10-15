@@ -23,10 +23,12 @@ namespace DAL
             cmd = conn.CreateCommand();
         }
         //select query
-        public DataSet ExecuteQueryDataSet(string strSql, CommandType ct, params SqlParameter[] p)
+        public DataSet ExecuteQueryDataSet(string strSql, CommandType ct, params SqlParameter[] param)
         {
             cmd.CommandText = strSql;
             cmd.CommandType = ct;
+            foreach (SqlParameter p in param)
+                cmd.Parameters.Add(p);
             adp = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             adp.Fill(ds);
