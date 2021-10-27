@@ -50,9 +50,24 @@ namespace FORM
 
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
+
+        private void dtgvTimKiem_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            if(e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dtgvTimKiem.Rows[e.RowIndex];
+                txtTenSachHoaDon.Text = row.Cells[0].Value.ToString();
+            }
+        }
+
+        private void btnThemVaoHoaDon_Click(object sender, EventArgs e)
+        {
+            if(cbNhanVien.Text.Length == 0)
+            {
+                MessageBox.Show("Bạn phải nhập ngày bán", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
         }
     }
 }
