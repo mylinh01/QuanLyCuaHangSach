@@ -41,13 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BUS_QLCuaHangSach.cs" />
+    <Compile Include="ChiTietPhieuNhapBUS.cs" />
     <Compile Include="HoaDonBUS.cs" />
     <Compile Include="GiamGiaBUS.cs" />
+    <Compile Include="LoaiSachBUS.cs" />
     <Compile Include="LoaiThanhVienBUS.cs" />
     <Compile Include="NhanVienBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SachBUS.cs" />
     <Compile Include="TacGiaBUS.cs" />
+    <Compile Include="ThanhVienBUS.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
