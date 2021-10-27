@@ -20,7 +20,7 @@ namespace BUS
         {
             return db.ExecuteQueryDataSet("spGetLoaiSach", CommandType.StoredProcedure);
         }
-        public DataSet findLoaiSachByName()
+        public DataSet findLoaiSachByIDAndName()
         {
             return db.ExecuteQueryDataSet("spFindLoaiSachByIDAndName", CommandType.StoredProcedure);
         }

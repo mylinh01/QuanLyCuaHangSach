@@ -29,13 +29,16 @@
         private void InitializeComponent()
         {
             this.panelTimKiem = new System.Windows.Forms.Panel();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.btnTimKiem = new System.Windows.Forms.Button();
             this.dtgvTimKiem = new System.Windows.Forms.DataGridView();
             this.txtTenSach = new System.Windows.Forms.TextBox();
             this.cbLoaiSach = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnTimKiem = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
+            this.TenSach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GiaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoLuongTonKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelTimKiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTimKiem)).BeginInit();
             this.SuspendLayout();
@@ -54,9 +57,33 @@
             this.panelTimKiem.Size = new System.Drawing.Size(642, 219);
             this.panelTimKiem.TabIndex = 0;
             // 
+            // btnThem
+            // 
+            this.btnThem.Location = new System.Drawing.Point(554, 110);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(75, 23);
+            this.btnThem.TabIndex = 4;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Location = new System.Drawing.Point(554, 57);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(75, 23);
+            this.btnTimKiem.TabIndex = 4;
+            this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
             // dtgvTimKiem
             // 
             this.dtgvTimKiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvTimKiem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TenSach,
+            this.GiaBan,
+            this.SoLuongTonKho});
             this.dtgvTimKiem.Location = new System.Drawing.Point(34, 56);
             this.dtgvTimKiem.Name = "dtgvTimKiem";
             this.dtgvTimKiem.Size = new System.Drawing.Size(514, 135);
@@ -95,25 +122,24 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Thể loại";
             // 
-            // btnTimKiem
+            // TenSach
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(554, 57);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(75, 23);
-            this.btnTimKiem.TabIndex = 4;
-            this.btnTimKiem.Text = "Tìm kiếm";
-            this.btnTimKiem.UseVisualStyleBackColor = true;
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            this.TenSach.DataPropertyName = "TenSach";
+            this.TenSach.HeaderText = "TenSach";
+            this.TenSach.Name = "TenSach";
+            this.TenSach.Width = 200;
             // 
-            // btnThem
+            // GiaBan
             // 
-            this.btnThem.Location = new System.Drawing.Point(554, 110);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(75, 23);
-            this.btnThem.TabIndex = 4;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            this.GiaBan.DataPropertyName = "GiaBan";
+            this.GiaBan.HeaderText = "GiaBan";
+            this.GiaBan.Name = "GiaBan";
+            // 
+            // SoLuongTonKho
+            // 
+            this.SoLuongTonKho.DataPropertyName = "SoLuongTonKho";
+            this.SoLuongTonKho.HeaderText = "SoLuongTonKho";
+            this.SoLuongTonKho.Name = "SoLuongTonKho";
             // 
             // frmGiaoDienBanHang
             // 
@@ -141,5 +167,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnTimKiem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenSach;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GiaBan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuongTonKho;
     }
 }

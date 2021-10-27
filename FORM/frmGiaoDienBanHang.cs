@@ -16,7 +16,8 @@ namespace FORM
     public partial class frmGiaoDienBanHang : Form
     {
         public DataSet ds = new DataSet();
-        public LoaiSachBUS bus = new LoaiSachBUS();
+        public LoaiSachBUS busLoaiSach = new LoaiSachBUS();
+        public SachBUS busSach = new SachBUS();
         public frmGiaoDienBanHang()
         {
             InitializeComponent();
@@ -28,14 +29,28 @@ namespace FORM
         }
         void loadCbLoaiSach()
         {
-            var dss = bus.findLoaiSachByName();
-            cbLoaiSach.DataSource = dss.Tables[0];
+            //var dss = busLoaiSach.findLoaiSachByIDAndName();
+            cbLoaiSach.DataSource = busLoaiSach.findLoaiSachByIDAndName().Tables[0];
+        
             cbLoaiSach.DisplayMember = "TenLoaiSach";
     
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
+            if(txtTenSach.Text == "")
+            {
+                //cbLoaiSach.SelectedIndex = cbLoaiSach.find
+                int idLoaisach = 0;
+                var ds = busSach.findSachByNameLoaiSach(idLoaisach);
+                dtgvTimKiem.DataSource = ds.Tables[0];
+            }
+            else
+            {
+                string tensach = txtTenSach.Text.Trim();
+                var ds = busSach.findSachByName(tensach);
+                dtgvTimKiem.DataSource = ds.Tables[0];
+            }
 
         }
 
