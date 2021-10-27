@@ -20,7 +20,10 @@ namespace BUS
         {
             return db.ExecuteQueryDataSet("spGetThanhVien", CommandType.StoredProcedure);
         }
-
+        public DataSet getNameAndIdThanhVien()
+        {
+            return db.ExecuteQueryDataSet("spGetNameAndIdThanhVien", CommandType.StoredProcedure);
+        }
         public bool insertThanhVien(ref string err,
             string hoten,
             string diachi,

@@ -18,6 +18,8 @@ namespace FORM
         public DataSet ds = new DataSet();
         public LoaiSachBUS busLoaiSach = new LoaiSachBUS();
         public SachBUS busSach = new SachBUS();
+        public NhanVienBUS busNhanVien = new NhanVienBUS();
+        public ThanhVienBUS busThanhVien = new ThanhVienBUS();
         public frmGiaoDienBanHang()
         {
             InitializeComponent();
@@ -25,38 +27,32 @@ namespace FORM
 
         private void frmGiaoDienBanHang_Load(object sender, EventArgs e)
         {
-            loadCbLoaiSach();
+            lbNgayMua.Text = DateTime.Now.ToString();
+            loadCbNhanVien();
+            loadCbThanhVien();
         }
-        void loadCbLoaiSach()
+        private void loadCbThanhVien()
         {
-            //var dss = busLoaiSach.findLoaiSachByIDAndName();
-            cbLoaiSach.DataSource = busLoaiSach.findLoaiSachByIDAndName().Tables[0];
-        
-            cbLoaiSach.DisplayMember = "TenLoaiSach";
-    
+            cbThanhVien.DataSource = busThanhVien.getNameAndIdThanhVien().Tables[0];
+            cbThanhVien.DisplayMember = "HoTen";
         }
-
+        private void loadCbNhanVien()
+        {
+            cbNhanVien.DataSource = busNhanVien.getNameAndIdNhanVien().Tables[0];
+            cbNhanVien.DisplayMember = "HoTen";
+        }
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            if(txtTenSach.Text == "")
-            {
-                //cbLoaiSach.SelectedIndex = cbLoaiSach.find
-                int idLoaisach = 0;
-                var ds = busSach.findSachByNameLoaiSach(idLoaisach);
-                dtgvTimKiem.DataSource = ds.Tables[0];
-            }
-            else
-            {
+
                 string tensach = txtTenSach.Text.Trim();
                 var ds = busSach.findSachByName(tensach);
                 dtgvTimKiem.DataSource = ds.Tables[0];
-            }
 
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

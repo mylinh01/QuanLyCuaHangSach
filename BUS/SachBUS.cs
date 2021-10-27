@@ -23,10 +23,7 @@ namespace BUS
         {
             return db.ExecuteQueryDataSet("spGetSachForSearch", CommandType.StoredProcedure);
         }
-        public DataSet findSachByNameLoaiSach(int id)
-        {
-            return db.ExecuteQueryDataSet("SELECT TenSach,GiaBan, SoLuongTonKho FROM Sach WHERE Sach.ID_LoaiSach = '" + id + "'", CommandType.Text);
-        }
+        
         public DataSet findSachByName(string name)
         {
             return db.ExecuteQueryDataSet("SELECT TenSach,GiaBan, SoLuongTonKho FROM Sach WHERE TenSach LIKE N'%" + name + "%'", CommandType.Text);
