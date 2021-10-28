@@ -15,7 +15,7 @@ namespace DAL
         SqlCommand cmd;
         SqlDataAdapter adp;
 
-        string strConnection = "Data Source=(local);Initial Catalog=QuanLyCuaHangSach;Integrated Security=True";
+        string strConnection = "Data Source=DESKTOP-N0B1KM6\\SQLEXPRESS;Initial Catalog=QuanLyCuaHangSach;Integrated Security=True";
 
         public DAL_QLCuaHangSach()
         {
