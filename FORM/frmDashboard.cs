@@ -87,6 +87,7 @@ namespace FORM
                 //Button
                 currentBtn = (IconButton)senderBtn;
                 //currentBtn.BackColor = Color.FromArgb(37, 36, 81);
+                currentBtn.BackColor = Color.FromArgb(244, 244, 244);
                 currentBtn.ForeColor = color;
                 //currentBtn.ForeColor = Color.FromArgb(3, 165, 252);
                 currentBtn.TextAlign = ContentAlignment.MiddleCenter;
@@ -110,6 +111,7 @@ namespace FORM
             if (currentBtn != null)
             {
                 //currentBtn.BackColor = Color.FromArgb(31, 30, 68);
+                currentBtn.BackColor = Color.White;
                 //currentBtn.ForeColor = Color.Gainsboro;
                 currentBtn.ForeColor = SystemColors.ControlDarkDark;
                 currentBtn.TextAlign = ContentAlignment.MiddleLeft;
@@ -123,7 +125,7 @@ namespace FORM
         private void btnSale_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new frmLogin());
+            OpenChildForm(new Form1());
         }
 
         private void btnInvoice_Click(object sender, EventArgs e)
@@ -144,6 +146,7 @@ namespace FORM
         private void btnMember_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color5);
+            OpenChildForm(new frmMember());
         }
 
         private void btnRevenue_Click(object sender, EventArgs e)
@@ -156,6 +159,10 @@ namespace FORM
             ActivateButton(sender, RGBColors.color7);
         }
 
+        private void btnSetting_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color1);
+        }
         private void OpenChildForm(Form childForm)
         {
             //open only form
@@ -201,6 +208,12 @@ namespace FORM
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
 
         private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void panneControlBox_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
