@@ -26,6 +26,7 @@ namespace DAL
         //select query
         public DataSet ExecuteQueryDataSet(string strSql, CommandType ct, params SqlParameter[] param)
         {
+            cmd.Parameters.Clear();
             cmd.CommandText = strSql;
             cmd.CommandType = ct;
             foreach (SqlParameter p in param)

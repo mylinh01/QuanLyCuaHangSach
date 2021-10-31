@@ -40,6 +40,8 @@
             this.SoLuongTonKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTenSach = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -51,6 +53,7 @@
             this.SoLuongHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbThanhTien = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.lbGiamGia = new System.Windows.Forms.Label();
             this.lbTongTien = new System.Windows.Forms.Label();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
@@ -62,6 +65,8 @@
             this.lbNgayMua = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.btnXoaSanPham = new System.Windows.Forms.Button();
+            this.btnHuyHoaDon = new System.Windows.Forms.Button();
             this.panelTimKiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTimKiem)).BeginInit();
             this.panel1.SuspendLayout();
@@ -124,6 +129,7 @@
             this.dtgvTimKiem.Location = new System.Drawing.Point(19, 57);
             this.dtgvTimKiem.Margin = new System.Windows.Forms.Padding(5);
             this.dtgvTimKiem.Name = "dtgvTimKiem";
+            this.dtgvTimKiem.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -143,18 +149,21 @@
             this.TenSach.FillWeight = 200F;
             this.TenSach.HeaderText = "Tên sách";
             this.TenSach.Name = "TenSach";
+            this.TenSach.ReadOnly = true;
             // 
             // GiaBan
             // 
             this.GiaBan.DataPropertyName = "GiaBan";
             this.GiaBan.HeaderText = "Giá Bán";
             this.GiaBan.Name = "GiaBan";
+            this.GiaBan.ReadOnly = true;
             // 
             // SoLuongTonKho
             // 
             this.SoLuongTonKho.DataPropertyName = "SoLuongTonKho";
             this.SoLuongTonKho.HeaderText = "Tồn kho";
             this.SoLuongTonKho.Name = "SoLuongTonKho";
+            this.SoLuongTonKho.ReadOnly = true;
             // 
             // txtTenSach
             // 
@@ -167,6 +176,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.btnHuyHoaDon);
+            this.panel1.Controls.Add(this.btnXoaSanPham);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label11);
@@ -175,6 +188,7 @@
             this.panel1.Controls.Add(this.cbNhanVien);
             this.panel1.Controls.Add(this.dtgvHoaDon);
             this.panel1.Controls.Add(this.lbThanhTien);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.lbGiamGia);
             this.panel1.Controls.Add(this.lbTongTien);
             this.panel1.Controls.Add(this.txtSoLuong);
@@ -187,6 +201,26 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(474, 477);
             this.panel1.TabIndex = 1;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(413, 452);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(35, 17);
+            this.label13.TabIndex = 10;
+            this.label13.Text = "VND";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(123, 374);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(35, 17);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "VND";
             // 
             // label2
             // 
@@ -223,7 +257,7 @@
             this.btnThemVaoHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnThemVaoHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnThemVaoHoaDon.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemVaoHoaDon.Location = new System.Drawing.Point(382, 373);
+            this.btnThemVaoHoaDon.Location = new System.Drawing.Point(395, 300);
             this.btnThemVaoHoaDon.Name = "btnThemVaoHoaDon";
             this.btnThemVaoHoaDon.Size = new System.Drawing.Size(66, 30);
             this.btnThemVaoHoaDon.TabIndex = 4;
@@ -271,6 +305,7 @@
             this.ThanhTien});
             this.dtgvHoaDon.Location = new System.Drawing.Point(18, 118);
             this.dtgvHoaDon.Name = "dtgvHoaDon";
+            this.dtgvHoaDon.ReadOnly = true;
             this.dtgvHoaDon.RowHeadersVisible = false;
             this.dtgvHoaDon.Size = new System.Drawing.Size(443, 158);
             this.dtgvHoaDon.TabIndex = 1;
@@ -281,17 +316,20 @@
             this.TenSachHoaDon.FillWeight = 200F;
             this.TenSachHoaDon.HeaderText = "Tên Sách";
             this.TenSachHoaDon.Name = "TenSachHoaDon";
+            this.TenSachHoaDon.ReadOnly = true;
             // 
             // SoLuongHoaDon
             // 
             this.SoLuongHoaDon.DataPropertyName = "SoLuong";
             this.SoLuongHoaDon.HeaderText = "Số Lượng";
             this.SoLuongHoaDon.Name = "SoLuongHoaDon";
+            this.SoLuongHoaDon.ReadOnly = true;
             // 
             // ThanhTien
             // 
             this.ThanhTien.HeaderText = "Thành Tiền";
             this.ThanhTien.Name = "ThanhTien";
+            this.ThanhTien.ReadOnly = true;
             // 
             // lbThanhTien
             // 
@@ -303,21 +341,31 @@
             this.lbThanhTien.TabIndex = 0;
             this.lbThanhTien.Text = "tien";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(286, 374);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(19, 17);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "%";
+            // 
             // lbGiamGia
             // 
             this.lbGiamGia.AutoSize = true;
             this.lbGiamGia.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbGiamGia.Location = new System.Drawing.Point(275, 373);
+            this.lbGiamGia.Location = new System.Drawing.Point(274, 373);
             this.lbGiamGia.Name = "lbGiamGia";
-            this.lbGiamGia.Size = new System.Drawing.Size(56, 17);
+            this.lbGiamGia.Size = new System.Drawing.Size(15, 17);
             this.lbGiamGia.TabIndex = 0;
-            this.lbGiamGia.Text = "giamgia";
+            this.lbGiamGia.Text = "0";
             // 
             // lbTongTien
             // 
             this.lbTongTien.AutoSize = true;
             this.lbTongTien.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTongTien.Location = new System.Drawing.Point(57, 373);
+            this.lbTongTien.Location = new System.Drawing.Point(67, 374);
             this.lbTongTien.Name = "lbTongTien";
             this.lbTongTien.Size = new System.Drawing.Size(50, 17);
             this.lbTongTien.TabIndex = 0;
@@ -409,6 +457,32 @@
             this.label9.Size = new System.Drawing.Size(3, 550);
             this.label9.TabIndex = 2;
             // 
+            // btnXoaSanPham
+            // 
+            this.btnXoaSanPham.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnXoaSanPham.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnXoaSanPham.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaSanPham.Location = new System.Drawing.Point(315, 300);
+            this.btnXoaSanPham.Name = "btnXoaSanPham";
+            this.btnXoaSanPham.Size = new System.Drawing.Size(66, 30);
+            this.btnXoaSanPham.TabIndex = 11;
+            this.btnXoaSanPham.Text = "Xóa";
+            this.btnXoaSanPham.UseVisualStyleBackColor = false;
+            this.btnXoaSanPham.Click += new System.EventHandler(this.btnXoaSanPham_Click);
+            // 
+            // btnHuyHoaDon
+            // 
+            this.btnHuyHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnHuyHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnHuyHoaDon.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuyHoaDon.Location = new System.Drawing.Point(232, 300);
+            this.btnHuyHoaDon.Name = "btnHuyHoaDon";
+            this.btnHuyHoaDon.Size = new System.Drawing.Size(66, 30);
+            this.btnHuyHoaDon.TabIndex = 12;
+            this.btnHuyHoaDon.Text = "Hủy";
+            this.btnHuyHoaDon.UseVisualStyleBackColor = false;
+            this.btnHuyHoaDon.Click += new System.EventHandler(this.btnHuyHoaDon_Click);
+            // 
             // frmGiaoDienBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -467,5 +541,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btnXoaSanPham;
+        private System.Windows.Forms.Button btnHuyHoaDon;
     }
 }
