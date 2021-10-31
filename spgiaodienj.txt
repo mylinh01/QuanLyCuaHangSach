@@ -1,0 +1,41 @@
+use QuanLyCuaHangSach
+
+go
+CREATE PROCEDURE spFindLoaiSachByName
+AS
+BEGIN
+	SELECT TenLoaiSach FROM LoaiSach
+END
+
+go
+CREATE PROCEDURE spFindLoaiSachByIDAndName
+AS
+BEGIN
+	SELECT ID, TenLoaiSach FROM LoaiSach
+END
+go
+CREATE PROCEDURE spFindSachByNameLoaiSach
+	@ID_LoaiSach bigint
+AS	
+BEGIN
+	SELECT TenSach FROM Sach WHERE ID_LoaiSach=ID_LoaiSach
+END
+
+go
+ALTER TABLE HoaDon
+ALTER COLUMN ID_TV bigint  NULL
+
+
+go
+CREATE PROCEDURE spGetNameAndIdNhanVien
+AS
+BEGIN
+	SELECT ID, HoTen FROM NhanVien
+END
+
+go
+CREATE PROCEDURE spGetNameAndIdThanhVien
+AS
+BEGIN
+	SELECT ID, HoTen FROM ThanhVien
+END

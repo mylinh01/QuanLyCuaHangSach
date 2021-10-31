@@ -28,5 +28,9 @@ namespace BUS
         {
             return db.ExecuteQueryDataSet("SELECT TenSach,GiaBan, SoLuongTonKho FROM Sach WHERE TenSach LIKE N'%" + name + "%'", CommandType.Text);
         }
+        public DataSet getSoSachTonKho(string name)
+        {
+            return db.ExecuteQueryDataSet("SELECT SoLuongTonKho FROM Sach WHERE TenSach = N'" + name + "'", CommandType.Text);
+        }
     }
 }
