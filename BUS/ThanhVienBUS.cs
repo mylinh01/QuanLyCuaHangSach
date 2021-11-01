@@ -29,6 +29,11 @@ namespace BUS
             return db.ExecuteQueryDataSet("spGetGiamGiaByTenThanhVien", CommandType.StoredProcedure,
                 new SqlParameter("@HoTen", hoten));
         }
+        public DataSet getGiamGiaByIDThanhVien(int id)
+        {
+            return db.ExecuteQueryDataSet("spGetGiamGiaByIDThanhVien", CommandType.StoredProcedure,
+                new SqlParameter("@ID", id));
+        }
         public bool insertThanhVien(ref string err,
             string hoten,
             string diachi,

@@ -21,7 +21,10 @@ namespace FORM
         public NhanVienBUS busNhanVien = new NhanVienBUS();
         public ThanhVienBUS busThanhVien = new ThanhVienBUS();
         public GiamGiaBUS busGiamGia = new GiamGiaBUS();
-
+        public HoaDonBUS busHoaDon = new HoaDonBUS();
+        private int id_nv;
+        private int id_tv;
+        private int idgg;
         public frmGiaoDienBanHang()
         {
             InitializeComponent();
@@ -36,8 +39,8 @@ namespace FORM
         {
             cbThanhVien.DataSource = busThanhVien.getNameAndIdThanhVien().Tables[0];
             cbThanhVien.DisplayMember = "HoTen";
-            cbThanhVien.ValueMember = "HoTen";
-            cbThanhVien.SelectedIndex = 0;
+            cbThanhVien.ValueMember = "ID";
+
         }
 
         private void loadCbNhanVien()
@@ -135,8 +138,8 @@ namespace FORM
 
         public void loadData()
         {
-            lbNgayMua.Text = DateTime.Now.ToString("M/d/yyyy");
-            //lbNgayMua.Text = DateTime.Now.ToString();
+            //lbNgayMua.Text = DateTime.Now.ToString("M/d/yyyy");
+            lbNgayMua.Text = DateTime.Now.ToString();
             loadCbNhanVien();
             loadCbThanhVien();
             txtTenSachHoaDon.Enabled = false;
@@ -151,7 +154,7 @@ namespace FORM
             //cbThanhVien.SelectedItem =null;
             //cbNhanVien.SelectedItem = null;
             dtgvHoaDon.Rows.Clear();
-            cbThanhVien.SelectedIndex = 0;
+            //cbThanhVien.SelectedIndex = 0;
             tinhGiamGia();
         }
 
@@ -164,24 +167,49 @@ namespace FORM
         {
             double giamgia = 0;
             string name = cbThanhVien.SelectedValue.ToString();
-            if (name !="System.Data.DataRowView")
+            if (name != "System.Data.DataRowView")
             {
-                double ggtv = Convert.ToInt32(busThanhVien.getGiamGiaByTenThanhVien(name).Tables[0].Rows[0]["MucUuDai"].ToString());
+                id_tv = Convert.ToInt32(cbThanhVien.GetItemText(cbThanhVien.SelectedValue.ToString()));
+                double ggtv = Convert.ToInt32(busThanhVien.getGiamGiaByIDThanhVien(id_tv).Tables[0].Rows[0]["MucUuDai"].ToString());
                 giamgia += ggtv;
             }
             double ggngay = 0;
             DateTime time = DateTime.Now;
             ds =  busGiamGia.getGiamGiaByNgay(time);
             ggngay = Convert.ToDouble( ds.Tables[0].Rows[0]["PhanTramGG"]);
+            // lấy id của mã giảm giá để lưu xuống database
+            idgg = Convert.ToInt32(ds.Tables[0].Rows[0]["ID"]);
+            //
             giamgia += ggngay;
+            if (giamgia > 100) giamgia = 100;
             lbGiamGia.Text = giamgia.ToString();
         }
 
         private void cbNhanVien_SelectedValueChanged(object sender, EventArgs e)
         {
             //MessageBox.Show(cbNhanVien.SelectedValue.ToString());
-        }
+            string name = cbNhanVien.SelectedValue.ToString();
+            if (name != "System.Data.DataRowView")
+            {
+                // lấy id của nhân viên  để lưu
+                id_nv = Convert.ToInt32(cbNhanVien.SelectedValue.ToString());
+            }
+           
 
+        }
+        private void cbThanhVien_SelectedValueChanged(object sender, EventArgs e)
+        {
+            //MessageBox.Show(cbThanhVien.SelectedValue.ToString());
+
+            string name = cbThanhVien.SelectedValue.ToString();
+            if (name != "System.Data.DataRowView")
+            {
+                cbThanhVien.ValueMember = "ID";
+                id_tv = int.Parse(cbThanhVien.SelectedValue.ToString());
+            }
+
+
+        }
         private void cbThanhVien_SelectedIndexChanged(object sender, EventArgs e)
         {
             tinhGiamGia();
@@ -189,8 +217,25 @@ namespace FORM
             if (name != "System.Data.DataRowView")
             {
                 tinhThanhTien();
-            }    
-                
+            }
+        }
+        private void btnXuatHoaDon_Click(object sender, EventArgs e)
+        {
+            luuHoaDon(id_nv, id_tv, idgg, Convert.ToInt64(lbThanhTien.Text));
+            luuChiTietHoaDon();
+        }
+        private void luuHoaDon(int idnv, int idtv, int idgg, long thanhtien)
+        {
+            string err = "";
+            DateTime ngaytao = DateTime.Now;
+            DateTime ngayupdate = DateTime.Now;
+            if (!busHoaDon.insertHoaDon(ref err, idnv, idtv, idgg, ngaytao, thanhtien,ngaytao,ngayupdate))
+                MessageBox.Show(err);
+           // else DataBind();
+        }
+        private void luuChiTietHoaDon()
+        {
+
         }
     }
 }

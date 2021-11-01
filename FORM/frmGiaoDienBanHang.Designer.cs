@@ -40,6 +40,7 @@
             this.SoLuongTonKho = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTenSach = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnXuatHoaDon = new System.Windows.Forms.Button();
             this.btnHuyHoaDon = new System.Windows.Forms.Button();
             this.btnXoaSanPham = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
@@ -67,6 +68,7 @@
             this.lbNgayMua = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.panelTimKiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvTimKiem)).BeginInit();
             this.panel1.SuspendLayout();
@@ -111,7 +113,7 @@
             // dtgvTimKiem
             // 
             this.dtgvTimKiem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvTimKiem.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dtgvTimKiem.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.Aqua;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -176,6 +178,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.btnXuatHoaDon);
             this.panel1.Controls.Add(this.btnHuyHoaDon);
             this.panel1.Controls.Add(this.btnXoaSanPham);
             this.panel1.Controls.Add(this.label13);
@@ -201,6 +205,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(474, 477);
             this.panel1.TabIndex = 1;
+            // 
+            // btnXuatHoaDon
+            // 
+            this.btnXuatHoaDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnXuatHoaDon.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnXuatHoaDon.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXuatHoaDon.Location = new System.Drawing.Point(18, 300);
+            this.btnXuatHoaDon.Name = "btnXuatHoaDon";
+            this.btnXuatHoaDon.Size = new System.Drawing.Size(105, 30);
+            this.btnXuatHoaDon.TabIndex = 13;
+            this.btnXuatHoaDon.Text = "Xuất hóa đơn";
+            this.btnXuatHoaDon.UseVisualStyleBackColor = false;
+            this.btnXuatHoaDon.Click += new System.EventHandler(this.btnXuatHoaDon_Click);
             // 
             // btnHuyHoaDon
             // 
@@ -293,7 +310,7 @@
             // 
             // cbThanhVien
             // 
-            this.cbThanhVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbThanhVien.BackColor = System.Drawing.Color.White;
             this.cbThanhVien.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbThanhVien.FormattingEnabled = true;
             this.cbThanhVien.Location = new System.Drawing.Point(315, 4);
@@ -301,10 +318,11 @@
             this.cbThanhVien.Size = new System.Drawing.Size(133, 25);
             this.cbThanhVien.TabIndex = 2;
             this.cbThanhVien.SelectedIndexChanged += new System.EventHandler(this.cbThanhVien_SelectedIndexChanged);
+            this.cbThanhVien.SelectedValueChanged += new System.EventHandler(this.cbThanhVien_SelectedValueChanged);
             // 
             // cbNhanVien
             // 
-            this.cbNhanVien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbNhanVien.BackColor = System.Drawing.Color.White;
             this.cbNhanVien.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbNhanVien.FormattingEnabled = true;
             this.cbNhanVien.Location = new System.Drawing.Point(81, 4);
@@ -316,7 +334,7 @@
             // dtgvHoaDon
             // 
             this.dtgvHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvHoaDon.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dtgvHoaDon.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.Aqua;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -484,6 +502,16 @@
             this.label9.Size = new System.Drawing.Size(3, 550);
             this.label9.TabIndex = 2;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(164, 313);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(50, 17);
+            this.label14.TabIndex = 14;
+            this.label14.Text = "money";
+            // 
             // frmGiaoDienBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -546,6 +574,8 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnXoaSanPham;
+        private System.Windows.Forms.Button btnXuatHoaDon;
         private System.Windows.Forms.Button btnHuyHoaDon;
+        private System.Windows.Forms.Label label14;
     }
 }
