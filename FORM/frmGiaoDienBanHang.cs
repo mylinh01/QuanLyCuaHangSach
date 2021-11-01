@@ -20,6 +20,8 @@ namespace FORM
         public SachBUS busSach = new SachBUS();
         public NhanVienBUS busNhanVien = new NhanVienBUS();
         public ThanhVienBUS busThanhVien = new ThanhVienBUS();
+        public GiamGiaBUS busGiamGia = new GiamGiaBUS();
+
         public frmGiaoDienBanHang()
         {
             InitializeComponent();
@@ -27,26 +29,31 @@ namespace FORM
 
         private void frmGiaoDienBanHang_Load(object sender, EventArgs e)
         {
-            
             loadData();
         }
+
         private void loadCbThanhVien()
         {
             cbThanhVien.DataSource = busThanhVien.getNameAndIdThanhVien().Tables[0];
             cbThanhVien.DisplayMember = "HoTen";
+            cbThanhVien.ValueMember = "HoTen";
+            cbThanhVien.SelectedIndex = 0;
         }
+
         private void loadCbNhanVien()
         {
             cbNhanVien.DataSource = busNhanVien.getNameAndIdNhanVien().Tables[0];
             cbNhanVien.DisplayMember = "HoTen";
             cbNhanVien.ValueMember = "ID";
         }
+
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
                 string tensach = txtTenSach.Text.Trim();
                 var ds = busSach.findSachByName(tensach);
                 dtgvTimKiem.DataSource = ds.Tables[0];
         }
+
         private void dtgvTimKiem_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if(e.RowIndex >= 0)
@@ -74,10 +81,22 @@ namespace FORM
                 MessageBox.Show("Số lượng mua lớn hơn số lượng tồn kho", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            for(int i=0;i<dtgvHoaDon.RowCount; i++)
+            {
+                var Row = dtgvHoaDon.Rows[i];
+                string name = Row.Cells[0].Value.ToString();
+                if(name == txtTenSachHoaDon.Text)
+                {
+                    MessageBox.Show("Sách này đã có trong hóa đơn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+            }
+
             addData(txtTenSachHoaDon.Text, txtSoLuong.Text, (100).ToString());
             totalMoney();
             tinhThanhTien();
         }
+
         private void addData(string name, string soluong, string thanhtien)
         {
             int sl = Convert.ToInt32(txtSoLuong.Text);
@@ -86,6 +105,7 @@ namespace FORM
             String[] row = { name, soluong, thanhtien };
             dtgvHoaDon.Rows.Add(row);
         }
+
         private void totalMoney()
         {
             double sum = 0;
@@ -95,6 +115,7 @@ namespace FORM
             }
             lbTongTien.Text = sum.ToString();
         }
+
         private void tinhThanhTien()
         {
             double sum = 0;
@@ -104,7 +125,6 @@ namespace FORM
             lbThanhTien.Text = sum.ToString();
         }
 
-
         private void btnXoaSanPham_Click(object sender, EventArgs e)
         {
             int index = dtgvHoaDon.CurrentCell.RowIndex;
@@ -112,29 +132,65 @@ namespace FORM
             totalMoney();
             tinhThanhTien();
         }
+
         public void loadData()
         {
-            lbNgayMua.Text = DateTime.Now.ToString();
+            lbNgayMua.Text = DateTime.Now.ToString("M/d/yyyy");
+            //lbNgayMua.Text = DateTime.Now.ToString();
             loadCbNhanVien();
             loadCbThanhVien();
             txtTenSachHoaDon.Enabled = false;
             txtSoLuong.Text = "1";
             lbTongTien.Text = "0";
-            lbGiamGia.Text = "2";
+            lbGiamGia.Text = "0";
             lbThanhTien.Text = "0";
             txtTenSach.Clear();
             txtTenSachHoaDon.Clear();
             dtgvHoaDon.AllowUserToAddRows = false;
             dtgvTimKiem.AllowUserToAddRows = false;
+            //cbThanhVien.SelectedItem =null;
+            //cbNhanVien.SelectedItem = null;
+            dtgvHoaDon.Rows.Clear();
+            cbThanhVien.SelectedIndex = 0;
+            tinhGiamGia();
         }
 
         private void btnHuyHoaDon_Click(object sender, EventArgs e)
         {
             loadData();
         }
+
+        private void tinhGiamGia()
+        {
+            double giamgia = 0;
+            string name = cbThanhVien.SelectedValue.ToString();
+            if (name !="System.Data.DataRowView")
+            {
+                double ggtv = Convert.ToInt32(busThanhVien.getGiamGiaByTenThanhVien(name).Tables[0].Rows[0]["MucUuDai"].ToString());
+                giamgia += ggtv;
+            }
+            double ggngay = 0;
+            DateTime time = DateTime.Now;
+            ds =  busGiamGia.getGiamGiaByNgay(time);
+            ggngay = Convert.ToDouble( ds.Tables[0].Rows[0]["PhanTramGG"]);
+            giamgia += ggngay;
+            lbGiamGia.Text = giamgia.ToString();
+        }
+
         private void cbNhanVien_SelectedValueChanged(object sender, EventArgs e)
         {
             //MessageBox.Show(cbNhanVien.SelectedValue.ToString());
+        }
+
+        private void cbThanhVien_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tinhGiamGia();
+            string name = cbThanhVien.SelectedValue.ToString();
+            if (name != "System.Data.DataRowView")
+            {
+                tinhThanhTien();
+            }    
+                
         }
     }
 }
