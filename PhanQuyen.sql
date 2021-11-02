@@ -1,6 +1,6 @@
 ﻿use QuanLyCuaHangSach
 go
---- tạo login
+--- Tạo login
 create login admin with password = '12345'
 go
 create login viet with password = '12345'
@@ -13,7 +13,7 @@ create login linh with password = '12345'
 go
 create login thang with password = '12345'
 go
--- tạo user
+-- Tạo user cho login
 create user admin for login admin
 go
 create user viet for login viet
@@ -27,52 +27,48 @@ go
 create user thang for login thang
 go
 
+--Cấp cho admin toàn bộ quyền
 exec sp_addrolemember 'db_owner', admin
+--Cấp quyền thêm, xóa, cập nhật dữ liệu trong các bảng cho các user
+GRANT SELECT, INSERT, UPDATE, DELETE TO viet
+GRANT SELECT, INSERT, UPDATE, DELETE TO trung
+GRANT SELECT, INSERT, UPDATE, DELETE TO diem
+GRANT SELECT, INSERT, UPDATE, DELETE TO linh
+GRANT SELECT, INSERT, UPDATE, DELETE TO thang
+----Từ chối quyền thêm, xóa, cập nhật dữ liệu trong bảng NhanVien của các user
+DENY SELECT, INSERT, UPDATE, DELETE ON NhanVien TO viet
+DENY SELECT, INSERT, UPDATE, DELETE ON NhanVien TO trung
+DENY SELECT, INSERT, UPDATE, DELETE ON NhanVien TO diem
+DENY SELECT, INSERT, UPDATE, DELETE ON NhanVien TO linh
+DENY SELECT, INSERT, UPDATE, DELETE ON NhanVien TO thang
 
-exec sp_addrolemember 'db_datareader', viet
-exec sp_addrolemember 'db_datareader', trung
-exec sp_addrolemember 'db_datareader', diem
-exec sp_addrolemember 'db_datareader', linh
-exec sp_addrolemember 'db_datareader', thang
-
-exec sp_addrolemember 'db_datawriter', viet
-exec sp_addrolemember 'db_datawriter', trung
-exec sp_addrolemember 'db_datawriter', diem
-exec sp_addrolemember 'db_datawriter', linh
-exec sp_addrolemember 'db_datawriter', thang
-
-
+--Cấp quyền thực thi các Stored Procedures cho các user
 GRANT EXEC TO viet
 GRANT EXEC TO trung
 GRANT EXEC TO diem
 GRANT EXEC TO linh
 GRANT EXEC TO thang
 
-REVOKE SELECT, INSERT, UPDATE, DELETE ON NhanVien FROM viet
-REVOKE SELECT, INSERT, UPDATE, DELETE ON NhanVien FROM trung
-REVOKE SELECT, INSERT, UPDATE, DELETE ON NhanVien FROM diem
-REVOKE SELECT, INSERT, UPDATE, DELETE ON NhanVien FROM linh
-REVOKE SELECT, INSERT, UPDATE, DELETE ON NhanVien FROM thang
+--Từ chối quyền thực thi các Stored Procedures NhanVien của các user
+DENY EXEC ON spGetNhanVien TO viet
+DENY EXEC ON spGetNhanVien TO trung
+DENY EXEC ON spGetNhanVien TO linh
+DENY EXEC ON spGetNhanVien TO thang
 
-REVOKE EXEC ON spGetNhanVien FROM viet
-REVOKE EXEC ON spGetNhanVien FROM trung
-REVOKE EXEC ON spGetNhanVien FROM linh
-REVOKE EXEC ON spGetNhanVien FROM thang
+DENY EXEC ON spDeleteNhanVien TO viet
+DENY EXEC ON spDeleteNhanVien TO trung
+DENY EXEC ON spDeleteNhanVien TO diem
+DENY EXEC ON spDeleteNhanVien TO linh
+DENY EXEC ON spDeleteNhanVien TO thang
 
-REVOKE EXEC ON spDeleteNhanVien FROM viet
-REVOKE EXEC ON spDeleteNhanVien FROM trung
-REVOKE EXEC ON spDeleteNhanVien FROM diem
-REVOKE EXEC ON spDeleteNhanVien FROM linh
-REVOKE EXEC ON spDeleteNhanVien FROM thang
+DENY EXEC ON spInsertNhanVien TO viet
+DENY EXEC ON spInsertNhanVien TO trung
+DENY EXEC ON spInsertNhanVien TO diem
+DENY EXEC ON spInsertNhanVien TO linh
+DENY EXEC ON spInsertNhanVien TO thang
 
-REVOKE EXEC ON spInsertNhanVien FROM viet
-REVOKE EXEC ON spInsertNhanVien FROM trung
-REVOKE EXEC ON spInsertNhanVien FROM diem
-REVOKE EXEC ON spInsertNhanVien FROM linh
-REVOKE EXEC ON spInsertNhanVien FROM thang
-
-REVOKE EXEC ON spUpdateNhanVien FROM viet
-REVOKE EXEC ON spUpdateNhanVien FROM trung
-REVOKE EXEC ON spUpdateNhanVien FROM diem
-REVOKE EXEC ON spUpdateNhanVien FROM linh
-REVOKE EXEC ON spUpdateNhanVien FROM thang
+DENY EXEC ON spUpdateNhanVien TO viet
+DENY EXEC ON spUpdateNhanVien TO trung
+DENY EXEC ON spUpdateNhanVien TO diem
+DENY EXEC ON spUpdateNhanVien TO linh
+DENY EXEC ON spUpdateNhanVien TO thang
