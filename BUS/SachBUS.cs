@@ -38,5 +38,9 @@ namespace BUS
             //return db.ExecuteQueryDataSet("SELECT SoLuongTonKho FROM Sach WHERE TenSach = N'" + name + "'", CommandType.Text);
             return db.ExecuteQueryDataSet("spGetGiaBanByName", CommandType.StoredProcedure, new SqlParameter("@TenSach", name));
         }
+        public DataSet getIDSachByName(string name)
+        {
+            return db.ExecuteQueryDataSet("spGetIDSachByName", CommandType.StoredProcedure, new SqlParameter("@TenSach", name));
+        }
     }
 }

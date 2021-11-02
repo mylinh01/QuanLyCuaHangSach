@@ -22,9 +22,11 @@ namespace FORM
         public ThanhVienBUS busThanhVien = new ThanhVienBUS();
         public GiamGiaBUS busGiamGia = new GiamGiaBUS();
         public HoaDonBUS busHoaDon = new HoaDonBUS();
-        private int id_nv;
-        private int id_tv;
-        private int idgg;
+        public ChiTietHoaDonBUS busChiTietHoaDon = new ChiTietHoaDonBUS();
+        private long id_nv;
+        private long id_tv;
+        private long idgg;
+        private int idhd;
         public frmGiaoDienBanHang()
         {
             InitializeComponent();
@@ -125,15 +127,24 @@ namespace FORM
             double tongtin = Convert.ToDouble(lbTongTien.Text);
             double giamgia = Convert.ToDouble(lbGiamGia.Text);
             sum = tongtin - (double)(giamgia * tongtin) / 100;
+            sum = Math.Round(sum);
             lbThanhTien.Text = sum.ToString();
         }
 
         private void btnXoaSanPham_Click(object sender, EventArgs e)
         {
-            int index = dtgvHoaDon.CurrentCell.RowIndex;
-            dtgvHoaDon.Rows.RemoveAt(index);
-            totalMoney();
-            tinhThanhTien();
+            try
+            {
+                int index = dtgvHoaDon.CurrentCell.RowIndex;
+                dtgvHoaDon.Rows.RemoveAt(index);
+                totalMoney();
+                tinhThanhTien();
+            }
+            catch
+            {
+                MessageBox.Show("Không có sản phẩm để xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
         }
 
         public void loadData()
@@ -169,8 +180,8 @@ namespace FORM
             string name = cbThanhVien.SelectedValue.ToString();
             if (name != "System.Data.DataRowView")
             {
-                id_tv = Convert.ToInt32(cbThanhVien.GetItemText(cbThanhVien.SelectedValue.ToString()));
-                double ggtv = Convert.ToInt32(busThanhVien.getGiamGiaByIDThanhVien(id_tv).Tables[0].Rows[0]["MucUuDai"].ToString());
+                id_tv = Convert.ToInt64(cbThanhVien.GetItemText(cbThanhVien.SelectedValue.ToString()));
+                double ggtv = Convert.ToDouble(busThanhVien.getGiamGiaByIDThanhVien(id_tv).Tables[0].Rows[0]["MucUuDai"].ToString());
                 giamgia += ggtv;
             }
             double ggngay = 0;
@@ -192,7 +203,7 @@ namespace FORM
             if (name != "System.Data.DataRowView")
             {
                 // lấy id của nhân viên  để lưu
-                id_nv = Convert.ToInt32(cbNhanVien.SelectedValue.ToString());
+                id_nv = Convert.ToInt64(cbNhanVien.SelectedValue.ToString());
             }
            
 
@@ -205,7 +216,7 @@ namespace FORM
             if (name != "System.Data.DataRowView")
             {
                 cbThanhVien.ValueMember = "ID";
-                id_tv = int.Parse(cbThanhVien.SelectedValue.ToString());
+                id_tv = long.Parse(cbThanhVien.SelectedValue.ToString());
             }
 
 
@@ -221,20 +232,55 @@ namespace FORM
         }
         private void btnXuatHoaDon_Click(object sender, EventArgs e)
         {
-            luuHoaDon(id_nv, id_tv, idgg, Convert.ToInt64(lbThanhTien.Text));
-            luuChiTietHoaDon();
+            try
+            {
+                luuHoaDon(id_nv, id_tv, idgg, Convert.ToInt64(lbThanhTien.Text));
+                idhd = Convert.ToInt32(busHoaDon.getLastRowInHoaDon().Tables[0].Rows[0]["ID"].ToString());
+                luuChiTietHoaDon(idhd);
+                MessageBox.Show("Lưu hóa đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadData();
+            }
+            catch(Exception ee)
+            {
+                //throw ee;
+                MessageBox.Show("Xuất hóa đơn thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+
         }
-        private void luuHoaDon(int idnv, int idtv, int idgg, long thanhtien)
+        private void luuHoaDon(long idnv, long idtv, long idgg, long thanhtien)
         {
             string err = "";
             DateTime ngaytao = DateTime.Now;
             DateTime ngayupdate = DateTime.Now;
-            if (!busHoaDon.insertHoaDon(ref err, idnv, idtv, idgg, ngaytao, thanhtien,ngaytao,ngayupdate))
-                MessageBox.Show(err);
-           // else DataBind();
+            if (!busHoaDon.insertHoaDon(ref err, idnv, idtv, idgg, ngaytao, thanhtien, ngaytao, ngayupdate)) ;
+                //MessageBox.Show(err);
+            
+            
         }
-        private void luuChiTietHoaDon()
+        private void luuChiTietHoaDon( int idhd)
         {
+            try
+            {
+                for (int i = 0; i < dtgvHoaDon.RowCount; i++)
+                {
+                    string err = "";
+                    var Row = dtgvHoaDon.Rows[i];
+                    string tensach = Row.Cells[0].Value.ToString();
+                    int soluong = Convert.ToInt32(Row.Cells[1].Value.ToString());
+                    DateTime ngaytao = DateTime.Now;
+                    DateTime ngayupdate = DateTime.Now;
+                    int idsach = Convert.ToInt32(busSach.getIDSachByName(tensach).Tables[0].Rows[0]["ID"].ToString());
+                    if (!busChiTietHoaDon.insertChiTietHoaDon(ref err, idhd, idsach, soluong, ngaytao, ngayupdate)) ;
+                    //MessageBox.Show(err);
+
+                }
+            }catch(Exception aaa)
+            {
+                throw aaa;
+            }
+            
 
         }
     }
