@@ -17,6 +17,7 @@ namespace FORM
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmDashboard());
+            //Application.Run(new frmThongKe());
         }
     }
 }

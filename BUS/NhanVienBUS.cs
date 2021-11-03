@@ -19,8 +19,12 @@ namespace BUS
 
         public DataSet getNhanVien()
         {
-            // return db.MyExcuteNonQuery("spGetNhanVien", CommandType.StoredProcedure);
-            return null;
+            return db.ExecuteQueryDataSet("spGetNhanVien", CommandType.StoredProcedure);
+
+        }
+        public DataSet getNameAndIdNhanVien()
+        {
+            return db.ExecuteQueryDataSet("spGetNameAndIdNhanVien", CommandType.StoredProcedure);
         }
 
         public bool insertNhanVien(ref string err, 

@@ -122,7 +122,7 @@ namespace FORM
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 784);
+            this.panelMenu.Size = new System.Drawing.Size(200, 734);
             this.panelMenu.TabIndex = 7;
             // 
             // panneControlBox
@@ -146,7 +146,7 @@ namespace FORM
             this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
             this.iconPictureBox3.IconColor = System.Drawing.SystemColors.ControlDarkDark;
             this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox3.Location = new System.Drawing.Point(76, 723);
+            this.iconPictureBox3.Location = new System.Drawing.Point(76, 690);
             this.iconPictureBox3.Name = "iconPictureBox3";
             this.iconPictureBox3.Size = new System.Drawing.Size(32, 32);
             this.iconPictureBox3.TabIndex = 9;
@@ -164,10 +164,10 @@ namespace FORM
             this.btnSetting.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSetting.IconSize = 35;
             this.btnSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSetting.Location = new System.Drawing.Point(0, 655);
+            this.btnSetting.Location = new System.Drawing.Point(0, 624);
             this.btnSetting.Name = "btnSetting";
             this.btnSetting.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btnSetting.Size = new System.Drawing.Size(200, 65);
+            this.btnSetting.Size = new System.Drawing.Size(200, 60);
             this.btnSetting.TabIndex = 8;
             this.btnSetting.Text = "Setting";
             this.btnSetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -206,10 +206,10 @@ namespace FORM
             this.btnStaff.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnStaff.IconSize = 35;
             this.btnStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStaff.Location = new System.Drawing.Point(0, 590);
+            this.btnStaff.Location = new System.Drawing.Point(0, 558);
             this.btnStaff.Name = "btnStaff";
             this.btnStaff.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btnStaff.Size = new System.Drawing.Size(200, 65);
+            this.btnStaff.Size = new System.Drawing.Size(200, 60);
             this.btnStaff.TabIndex = 6;
             this.btnStaff.Text = "Staff";
             this.btnStaff.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -229,10 +229,10 @@ namespace FORM
             this.btnRevenue.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRevenue.IconSize = 35;
             this.btnRevenue.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRevenue.Location = new System.Drawing.Point(0, 525);
+            this.btnRevenue.Location = new System.Drawing.Point(0, 497);
             this.btnRevenue.Name = "btnRevenue";
             this.btnRevenue.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btnRevenue.Size = new System.Drawing.Size(200, 65);
+            this.btnRevenue.Size = new System.Drawing.Size(200, 60);
             this.btnRevenue.TabIndex = 6;
             this.btnRevenue.Text = "Revenue";
             this.btnRevenue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -252,10 +252,10 @@ namespace FORM
             this.btnMember.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMember.IconSize = 35;
             this.btnMember.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMember.Location = new System.Drawing.Point(0, 460);
+            this.btnMember.Location = new System.Drawing.Point(0, 440);
             this.btnMember.Name = "btnMember";
             this.btnMember.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btnMember.Size = new System.Drawing.Size(200, 65);
+            this.btnMember.Size = new System.Drawing.Size(200, 60);
             this.btnMember.TabIndex = 6;
             this.btnMember.Text = "Member";
             this.btnMember.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -275,10 +275,10 @@ namespace FORM
             this.btnDiscount.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDiscount.IconSize = 35;
             this.btnDiscount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDiscount.Location = new System.Drawing.Point(0, 395);
+            this.btnDiscount.Location = new System.Drawing.Point(3, 387);
             this.btnDiscount.Name = "btnDiscount";
             this.btnDiscount.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btnDiscount.Size = new System.Drawing.Size(200, 65);
+            this.btnDiscount.Size = new System.Drawing.Size(200, 60);
             this.btnDiscount.TabIndex = 6;
             this.btnDiscount.Text = "Discount";
             this.btnDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -298,10 +298,10 @@ namespace FORM
             this.btnBookstore.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBookstore.IconSize = 35;
             this.btnBookstore.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBookstore.Location = new System.Drawing.Point(0, 330);
+            this.btnBookstore.Location = new System.Drawing.Point(0, 325);
             this.btnBookstore.Name = "btnBookstore";
             this.btnBookstore.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btnBookstore.Size = new System.Drawing.Size(200, 65);
+            this.btnBookstore.Size = new System.Drawing.Size(200, 60);
             this.btnBookstore.TabIndex = 6;
             this.btnBookstore.Text = "Bookstore";
             this.btnBookstore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -321,10 +321,10 @@ namespace FORM
             this.btnInvoice.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnInvoice.IconSize = 35;
             this.btnInvoice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInvoice.Location = new System.Drawing.Point(0, 265);
+            this.btnInvoice.Location = new System.Drawing.Point(-3, 264);
             this.btnInvoice.Name = "btnInvoice";
             this.btnInvoice.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btnInvoice.Size = new System.Drawing.Size(200, 65);
+            this.btnInvoice.Size = new System.Drawing.Size(200, 60);
             this.btnInvoice.TabIndex = 6;
             this.btnInvoice.Text = "Invoice";
             this.btnInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -345,10 +345,10 @@ namespace FORM
             this.btnSale.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSale.IconSize = 35;
             this.btnSale.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSale.Location = new System.Drawing.Point(0, 200);
+            this.btnSale.Location = new System.Drawing.Point(3, 198);
             this.btnSale.Name = "btnSale";
             this.btnSale.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btnSale.Size = new System.Drawing.Size(200, 65);
+            this.btnSale.Size = new System.Drawing.Size(200, 60);
             this.btnSale.TabIndex = 6;
             this.btnSale.Text = "Sale";
             this.btnSale.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -468,7 +468,7 @@ namespace FORM
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(200, 76);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(984, 708);
+            this.panelDesktop.Size = new System.Drawing.Size(984, 658);
             this.panelDesktop.TabIndex = 9;
             // 
             // frmDashboard
@@ -477,7 +477,7 @@ namespace FORM
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(1184, 784);
+            this.ClientSize = new System.Drawing.Size(1184, 734);
             this.ControlBox = false;
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitleBar);

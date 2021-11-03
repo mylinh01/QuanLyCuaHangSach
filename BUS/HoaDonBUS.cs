@@ -21,6 +21,18 @@ namespace BUS
         {
             return db.ExecuteQueryDataSet("spGetHoaDon", CommandType.StoredProcedure);
         }
+        public DataSet getLastRowInHoaDon()
+        {
+            return db.ExecuteQueryDataSet("spGetLastRowInHoaDon", CommandType.StoredProcedure);
+        }
+        public DataSet findMonthOnHoaDon()
+        {
+            return db.ExecuteQueryDataSet("select * from findMonthOnHoaDon()", CommandType.Text);
+        }
+        public DataSet countTotalbyMonth()
+        {
+            return db.ExecuteQueryDataSet("spCountTotalbyMonth", CommandType.StoredProcedure);
+        }
 
         public bool insertHoaDon(ref string err,
             long ID_NV,
@@ -28,8 +40,6 @@ namespace BUS
             long ID_GG,
             DateTime NgayMua,
             long ThanhTien,
-            DateTime NgayBatDau,
-            DateTime NgayKetThuc,
             DateTime NgayTao,
             DateTime NgayUpdate)
         {
@@ -39,8 +49,7 @@ namespace BUS
                 new SqlParameter("@ID_GG", ID_GG),
                 new SqlParameter("@NgayMua", NgayMua),
                 new SqlParameter("@ThanhTien", ThanhTien),
-                new SqlParameter("@NgayBatDau", NgayBatDau),
-                new SqlParameter("@NgayKetThuc", NgayKetThuc),
+              
                 new SqlParameter("@NgayTao", NgayTao),
                 new SqlParameter("@NgayUpdate", NgayUpdate));
         }
@@ -57,8 +66,7 @@ namespace BUS
             long ID_GG,
             DateTime NgayMua,
             long ThanhTien,
-            DateTime NgayBatDau,
-            DateTime NgayKetThuc,
+         
             DateTime NgayTao,
             DateTime NgayUpdate)
         {
@@ -69,8 +77,7 @@ namespace BUS
                 new SqlParameter("@ID_GG", ID_GG),
                 new SqlParameter("@NgayMua", NgayMua),
                 new SqlParameter("@ThanhTien", ThanhTien),
-                new SqlParameter("@NgayBatDau", NgayBatDau),
-                new SqlParameter("@NgayKetThuc", NgayKetThuc),
+              
                 new SqlParameter("@NgayTao", NgayTao),
                 new SqlParameter("@NgayUpdate", NgayUpdate));
         }

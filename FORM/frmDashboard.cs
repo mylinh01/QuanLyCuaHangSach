@@ -125,7 +125,7 @@ namespace FORM
         private void btnSale_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new Form1());
+            OpenChildForm(new frmGiaoDienBanHang());
         }
 
         private void btnInvoice_Click(object sender, EventArgs e)
@@ -152,6 +152,7 @@ namespace FORM
         private void btnRevenue_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color6);
+            OpenChildForm(new frmThongKe());
         }
 
         private void btnStaff_Click(object sender, EventArgs e)

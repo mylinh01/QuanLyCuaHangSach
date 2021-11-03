@@ -15,16 +15,18 @@ namespace DAL
         SqlCommand cmd;
         SqlDataAdapter adp;
 
-        string strConnection = "Data Source=DESKTOP-N0B1KM6\\SQLEXPRESS;Initial Catalog=QuanLyCuaHangSach;Integrated Security=True";
+        string strConnection = "Data Source=DESKTOP-NKCGN8N\\SQLEXPRESS;Initial Catalog=QuanLyCuaHangSach;Integrated Security=True";
 
         public DAL_QLCuaHangSach()
         {
             conn = new SqlConnection(strConnection);
             cmd = conn.CreateCommand();
+
         }
         //select query
         public DataSet ExecuteQueryDataSet(string strSql, CommandType ct, params SqlParameter[] param)
         {
+            cmd.Parameters.Clear();
             cmd.CommandText = strSql;
             cmd.CommandType = ct;
             foreach (SqlParameter p in param)

@@ -22,7 +22,12 @@ namespace BUS
         {
             return db.ExecuteQueryDataSet("spGetGiamGia", CommandType.StoredProcedure);
         }
-
+        public DataSet getGiamGiaByNgay(DateTime ngay)
+        {
+            //return db.ExecuteQueryDataSet("spGetGiamGiaByNgay", CommandType.StoredProcedure, new SqlParameter("@ngay", ngay));
+            return db.ExecuteQueryDataSet("SELECT ID, NgayBatDau, NgayKetThuc, PhanTramGG" +
+                " FROM  GiamGia WHERE NgayBatDau <= '" + ngay + "' AND  '" + ngay + "' <= NgayKetThuc", CommandType.Text);
+        }
         public bool insertGiamGia(ref string err,
             DateTime NgayBatDau,
             DateTime NgayKetThuc,
