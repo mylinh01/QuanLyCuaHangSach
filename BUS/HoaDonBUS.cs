@@ -25,6 +25,14 @@ namespace BUS
         {
             return db.ExecuteQueryDataSet("spGetLastRowInHoaDon", CommandType.StoredProcedure);
         }
+        public DataSet findMonthOnHoaDon()
+        {
+            return db.ExecuteQueryDataSet("select * from findMonthOnHoaDon()", CommandType.Text);
+        }
+        public DataSet countTotalbyMonth()
+        {
+            return db.ExecuteQueryDataSet("spCountTotalbyMonth", CommandType.StoredProcedure);
+        }
         public bool insertHoaDon(ref string err,
             long ID_NV,
             long ID_TV,
