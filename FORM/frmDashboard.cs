@@ -157,6 +157,7 @@ namespace FORM
         private void btnStaff_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color7);
+            OpenChildForm(new frmQuanLiNhanVien());
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
@@ -217,6 +218,16 @@ namespace FORM
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void panelDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

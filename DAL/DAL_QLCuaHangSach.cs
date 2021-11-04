@@ -15,7 +15,7 @@ namespace DAL
         SqlCommand cmd;
         SqlDataAdapter adp;
 
-        string strConnection = "Data Source=DESKTOP-N0B1KM6\\SQLEXPRESS;Initial Catalog=QuanLyCuaHangSach;Integrated Security=True";
+        string strConnection = "Data Source=.\\SA;Initial Catalog=QuanLyCuaHangSach;Integrated Security=True";
 
         public DAL_QLCuaHangSach()
         {
@@ -25,14 +25,31 @@ namespace DAL
         //select query
         public DataSet ExecuteQueryDataSet(string strSql, CommandType ct, params SqlParameter[] param)
         {
+            //conn.Open(); 
+            //cmd = new SqlCommand(strSql);
             cmd.CommandText = strSql;
             cmd.CommandType = ct;
+            //SqlCommandBuilder.DeriveParameters(cmd);
             foreach (SqlParameter p in param)
                 cmd.Parameters.Add(p);
+            //cmd.ExecuteNonQuery();
             adp = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             adp.Fill(ds);
             return ds;
+        }
+        public DataTable ExecuteQueryDataTable(string strSql,  params SqlParameter[] param)
+        {
+            //conn.Open(); 
+            cmd = new SqlCommand(strSql, conn);
+            //SqlCommandBuilder.DeriveParameters(cmd);
+            foreach (SqlParameter p in param)
+                cmd.Parameters.Add(p);
+            //cmd.ExecuteNonQuery();
+            adp = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adp.Fill(dt);
+            return dt;
         }
         public string ExecuteQueryXML(string strSql, CommandType ct, params SqlParameter[] p)
         {

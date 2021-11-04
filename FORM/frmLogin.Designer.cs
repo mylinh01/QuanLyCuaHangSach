@@ -49,10 +49,9 @@ namespace FORM
             // 
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.Location = new System.Drawing.Point(11, 11);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExit.Location = new System.Drawing.Point(16, 17);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(18, 18);
+            this.btnExit.Size = new System.Drawing.Size(27, 28);
             this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnExit.TabIndex = 0;
             this.btnExit.TabStop = false;
@@ -62,10 +61,9 @@ namespace FORM
             // 
             this.btnMaxControl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMaxControl.Image = ((System.Drawing.Image)(resources.GetObject("btnMaxControl.Image")));
-            this.btnMaxControl.Location = new System.Drawing.Point(55, 11);
-            this.btnMaxControl.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMaxControl.Location = new System.Drawing.Point(82, 17);
             this.btnMaxControl.Name = "btnMaxControl";
-            this.btnMaxControl.Size = new System.Drawing.Size(18, 18);
+            this.btnMaxControl.Size = new System.Drawing.Size(27, 28);
             this.btnMaxControl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMaxControl.TabIndex = 1;
             this.btnMaxControl.TabStop = false;
@@ -75,10 +73,9 @@ namespace FORM
             // 
             this.btnMinControl.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinControl.Image = ((System.Drawing.Image)(resources.GetObject("btnMinControl.Image")));
-            this.btnMinControl.Location = new System.Drawing.Point(33, 11);
-            this.btnMinControl.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMinControl.Location = new System.Drawing.Point(50, 17);
             this.btnMinControl.Name = "btnMinControl";
-            this.btnMinControl.Size = new System.Drawing.Size(18, 18);
+            this.btnMinControl.Size = new System.Drawing.Size(27, 28);
             this.btnMinControl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinControl.TabIndex = 2;
             this.btnMinControl.TabStop = false;
@@ -87,10 +84,9 @@ namespace FORM
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(39, 60);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(58, 92);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(174, 176);
+            this.pictureBox1.Size = new System.Drawing.Size(261, 271);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -98,35 +94,32 @@ namespace FORM
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("UD Digi Kyokasho NP-B", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(302, 43);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(453, 66);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 31);
+            this.label1.Size = new System.Drawing.Size(218, 47);
             this.label1.TabIndex = 4;
             this.label1.Text = "User login";
             // 
             // txtUsername
             // 
-            this.txtUsername.Font = new System.Drawing.Font("UD Digi Kyokasho NK-R", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.txtUsername.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtUsername.Location = new System.Drawing.Point(272, 88);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUsername.Location = new System.Drawing.Point(408, 135);
             this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(211, 32);
+            this.txtUsername.Size = new System.Drawing.Size(314, 47);
             this.txtUsername.TabIndex = 5;
             // 
             // txtPassword
             // 
-            this.txtPassword.Font = new System.Drawing.Font("UD Digi Kyokasho NK-R", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.txtPassword.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtPassword.Location = new System.Drawing.Point(272, 134);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPassword.Location = new System.Drawing.Point(408, 206);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(211, 31);
+            this.txtPassword.Size = new System.Drawing.Size(314, 46);
             this.txtPassword.TabIndex = 6;
             // 
             // btnLogin
@@ -136,12 +129,11 @@ namespace FORM
             this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("UD Digi Kyokasho NP-B", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(272, 187);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLogin.Location = new System.Drawing.Point(408, 288);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(210, 32);
+            this.btnLogin.Size = new System.Drawing.Size(315, 49);
             this.btnLogin.TabIndex = 7;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -150,21 +142,20 @@ namespace FORM
             // 
             this.label2.AutoSize = true;
             this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label2.Font = new System.Drawing.Font("UD Digi Kyokasho N-B", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(279, 233);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(418, 358);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(196, 15);
+            this.label2.Size = new System.Drawing.Size(303, 25);
             this.label2.TabIndex = 8;
             this.label2.Text = "Forgot Username / Password?";
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(544, 316);
+            this.ClientSize = new System.Drawing.Size(816, 486);
             this.ControlBox = false;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnLogin);
@@ -175,8 +166,10 @@ namespace FORM
             this.Controls.Add(this.btnMinControl);
             this.Controls.Add(this.btnMaxControl);
             this.Controls.Add(this.btnExit);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmLogin_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaxControl)).EndInit();
