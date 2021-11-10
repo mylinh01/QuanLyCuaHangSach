@@ -72,9 +72,10 @@ namespace FORM
             // 
             this.btnMinimize.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(35, 4);
+            this.btnMinimize.Location = new System.Drawing.Point(47, 5);
+            this.btnMinimize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(15, 15);
+            this.btnMinimize.Size = new System.Drawing.Size(20, 18);
             this.btnMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMinimize.TabIndex = 5;
             this.btnMinimize.TabStop = false;
@@ -84,9 +85,10 @@ namespace FORM
             // 
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.Location = new System.Drawing.Point(10, 4);
+            this.btnExit.Location = new System.Drawing.Point(13, 5);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(15, 15);
+            this.btnExit.Size = new System.Drawing.Size(20, 18);
             this.btnExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnExit.TabIndex = 3;
             this.btnExit.TabStop = false;
@@ -96,9 +98,10 @@ namespace FORM
             // 
             this.btnMaximize.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnMaximize.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximize.Image")));
-            this.btnMaximize.Location = new System.Drawing.Point(60, 4);
+            this.btnMaximize.Location = new System.Drawing.Point(80, 5);
+            this.btnMaximize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(15, 15);
+            this.btnMaximize.Size = new System.Drawing.Size(20, 18);
             this.btnMaximize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnMaximize.TabIndex = 4;
             this.btnMaximize.TabStop = false;
@@ -121,8 +124,9 @@ namespace FORM
             this.panelMenu.Controls.Add(this.btnSale);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(200, 734);
+            this.panelMenu.Size = new System.Drawing.Size(267, 903);
             this.panelMenu.TabIndex = 7;
             // 
             // panneControlBox
@@ -132,8 +136,9 @@ namespace FORM
             this.panneControlBox.Controls.Add(this.btnMinimize);
             this.panneControlBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.panneControlBox.Location = new System.Drawing.Point(0, 0);
+            this.panneControlBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panneControlBox.Name = "panneControlBox";
-            this.panneControlBox.Size = new System.Drawing.Size(200, 55);
+            this.panneControlBox.Size = new System.Drawing.Size(267, 68);
             this.panneControlBox.TabIndex = 10;
             this.panneControlBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panneControlBox_MouseDown);
             // 
@@ -146,9 +151,11 @@ namespace FORM
             this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
             this.iconPictureBox3.IconColor = System.Drawing.SystemColors.ControlDarkDark;
             this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox3.Location = new System.Drawing.Point(76, 690);
+            this.iconPictureBox3.IconSize = 39;
+            this.iconPictureBox3.Location = new System.Drawing.Point(101, 849);
+            this.iconPictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconPictureBox3.Name = "iconPictureBox3";
-            this.iconPictureBox3.Size = new System.Drawing.Size(32, 32);
+            this.iconPictureBox3.Size = new System.Drawing.Size(43, 39);
             this.iconPictureBox3.TabIndex = 9;
             this.iconPictureBox3.TabStop = false;
             // 
@@ -164,10 +171,11 @@ namespace FORM
             this.btnSetting.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSetting.IconSize = 35;
             this.btnSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSetting.Location = new System.Drawing.Point(0, 624);
+            this.btnSetting.Location = new System.Drawing.Point(0, 768);
+            this.btnSetting.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btnSetting.Size = new System.Drawing.Size(200, 60);
+            this.btnSetting.Padding = new System.Windows.Forms.Padding(27, 0, 27, 0);
+            this.btnSetting.Size = new System.Drawing.Size(267, 74);
             this.btnSetting.TabIndex = 8;
             this.btnSetting.Text = "Setting";
             this.btnSetting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -179,9 +187,10 @@ namespace FORM
             // 
             this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
-            this.btnHome.Location = new System.Drawing.Point(0, 56);
+            this.btnHome.Location = new System.Drawing.Point(0, 69);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(200, 138);
+            this.btnHome.Size = new System.Drawing.Size(267, 170);
             this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnHome.TabIndex = 7;
             this.btnHome.TabStop = false;
@@ -189,9 +198,10 @@ namespace FORM
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(240, 56);
+            this.panel1.Location = new System.Drawing.Point(320, 69);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 117);
+            this.panel1.Size = new System.Drawing.Size(267, 144);
             this.panel1.TabIndex = 0;
             // 
             // btnStaff
@@ -206,10 +216,11 @@ namespace FORM
             this.btnStaff.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnStaff.IconSize = 35;
             this.btnStaff.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStaff.Location = new System.Drawing.Point(0, 558);
+            this.btnStaff.Location = new System.Drawing.Point(0, 687);
+            this.btnStaff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnStaff.Name = "btnStaff";
-            this.btnStaff.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btnStaff.Size = new System.Drawing.Size(200, 60);
+            this.btnStaff.Padding = new System.Windows.Forms.Padding(27, 0, 27, 0);
+            this.btnStaff.Size = new System.Drawing.Size(267, 74);
             this.btnStaff.TabIndex = 6;
             this.btnStaff.Text = "Staff";
             this.btnStaff.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -229,10 +240,11 @@ namespace FORM
             this.btnRevenue.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRevenue.IconSize = 35;
             this.btnRevenue.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRevenue.Location = new System.Drawing.Point(0, 497);
+            this.btnRevenue.Location = new System.Drawing.Point(0, 612);
+            this.btnRevenue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRevenue.Name = "btnRevenue";
-            this.btnRevenue.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btnRevenue.Size = new System.Drawing.Size(200, 60);
+            this.btnRevenue.Padding = new System.Windows.Forms.Padding(27, 0, 27, 0);
+            this.btnRevenue.Size = new System.Drawing.Size(267, 74);
             this.btnRevenue.TabIndex = 6;
             this.btnRevenue.Text = "Revenue";
             this.btnRevenue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -252,10 +264,11 @@ namespace FORM
             this.btnMember.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMember.IconSize = 35;
             this.btnMember.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMember.Location = new System.Drawing.Point(0, 440);
+            this.btnMember.Location = new System.Drawing.Point(0, 542);
+            this.btnMember.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMember.Name = "btnMember";
-            this.btnMember.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btnMember.Size = new System.Drawing.Size(200, 60);
+            this.btnMember.Padding = new System.Windows.Forms.Padding(27, 0, 27, 0);
+            this.btnMember.Size = new System.Drawing.Size(267, 74);
             this.btnMember.TabIndex = 6;
             this.btnMember.Text = "Member";
             this.btnMember.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -275,10 +288,11 @@ namespace FORM
             this.btnDiscount.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDiscount.IconSize = 35;
             this.btnDiscount.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDiscount.Location = new System.Drawing.Point(3, 387);
+            this.btnDiscount.Location = new System.Drawing.Point(4, 476);
+            this.btnDiscount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDiscount.Name = "btnDiscount";
-            this.btnDiscount.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btnDiscount.Size = new System.Drawing.Size(200, 60);
+            this.btnDiscount.Padding = new System.Windows.Forms.Padding(27, 0, 27, 0);
+            this.btnDiscount.Size = new System.Drawing.Size(267, 74);
             this.btnDiscount.TabIndex = 6;
             this.btnDiscount.Text = "Discount";
             this.btnDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -298,10 +312,11 @@ namespace FORM
             this.btnBookstore.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBookstore.IconSize = 35;
             this.btnBookstore.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBookstore.Location = new System.Drawing.Point(0, 325);
+            this.btnBookstore.Location = new System.Drawing.Point(0, 400);
+            this.btnBookstore.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBookstore.Name = "btnBookstore";
-            this.btnBookstore.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btnBookstore.Size = new System.Drawing.Size(200, 60);
+            this.btnBookstore.Padding = new System.Windows.Forms.Padding(27, 0, 27, 0);
+            this.btnBookstore.Size = new System.Drawing.Size(267, 74);
             this.btnBookstore.TabIndex = 6;
             this.btnBookstore.Text = "Bookstore";
             this.btnBookstore.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -321,10 +336,11 @@ namespace FORM
             this.btnInvoice.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnInvoice.IconSize = 35;
             this.btnInvoice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInvoice.Location = new System.Drawing.Point(-3, 264);
+            this.btnInvoice.Location = new System.Drawing.Point(-4, 325);
+            this.btnInvoice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnInvoice.Name = "btnInvoice";
-            this.btnInvoice.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btnInvoice.Size = new System.Drawing.Size(200, 60);
+            this.btnInvoice.Padding = new System.Windows.Forms.Padding(27, 0, 27, 0);
+            this.btnInvoice.Size = new System.Drawing.Size(267, 74);
             this.btnInvoice.TabIndex = 6;
             this.btnInvoice.Text = "Invoice";
             this.btnInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -345,10 +361,11 @@ namespace FORM
             this.btnSale.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSale.IconSize = 35;
             this.btnSale.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSale.Location = new System.Drawing.Point(3, 198);
+            this.btnSale.Location = new System.Drawing.Point(4, 244);
+            this.btnSale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSale.Name = "btnSale";
-            this.btnSale.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.btnSale.Size = new System.Drawing.Size(200, 60);
+            this.btnSale.Padding = new System.Windows.Forms.Padding(27, 0, 27, 0);
+            this.btnSale.Size = new System.Drawing.Size(267, 74);
             this.btnSale.TabIndex = 6;
             this.btnSale.Text = "Sale";
             this.btnSale.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -366,9 +383,10 @@ namespace FORM
             this.panelTitleBar.Controls.Add(this.lblTitleChildForm);
             this.panelTitleBar.Controls.Add(this.iconCurrentChildForm);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitleBar.Location = new System.Drawing.Point(200, 0);
+            this.panelTitleBar.Location = new System.Drawing.Point(267, 0);
+            this.panelTitleBar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(984, 76);
+            this.panelTitleBar.Size = new System.Drawing.Size(1312, 94);
             this.panelTitleBar.TabIndex = 8;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
@@ -387,9 +405,10 @@ namespace FORM
             this.iconButton1.IconColor = System.Drawing.SystemColors.ControlDarkDark;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 25;
-            this.iconButton1.Location = new System.Drawing.Point(812, 18);
+            this.iconButton1.Location = new System.Drawing.Point(1083, 22);
+            this.iconButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(160, 37);
+            this.iconButton1.Size = new System.Drawing.Size(213, 46);
             this.iconButton1.TabIndex = 5;
             this.iconButton1.Text = "Do Quoc Viet";
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -399,9 +418,10 @@ namespace FORM
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(756, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(1008, 15);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(67, 62);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
@@ -415,10 +435,11 @@ namespace FORM
             this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Bell;
             this.iconPictureBox2.IconColor = System.Drawing.SystemColors.ControlDarkDark;
             this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox2.IconSize = 25;
-            this.iconPictureBox2.Location = new System.Drawing.Point(725, 23);
+            this.iconPictureBox2.IconSize = 31;
+            this.iconPictureBox2.Location = new System.Drawing.Point(967, 28);
+            this.iconPictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconPictureBox2.Name = "iconPictureBox2";
-            this.iconPictureBox2.Size = new System.Drawing.Size(25, 25);
+            this.iconPictureBox2.Size = new System.Drawing.Size(33, 31);
             this.iconPictureBox2.TabIndex = 3;
             this.iconPictureBox2.TabStop = false;
             // 
@@ -431,10 +452,11 @@ namespace FORM
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Bars;
             this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlDarkDark;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 30;
-            this.iconPictureBox1.Location = new System.Drawing.Point(687, 23);
+            this.iconPictureBox1.IconSize = 37;
+            this.iconPictureBox1.Location = new System.Drawing.Point(916, 28);
+            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(32, 30);
+            this.iconPictureBox1.Size = new System.Drawing.Size(43, 37);
             this.iconPictureBox1.TabIndex = 2;
             this.iconPictureBox1.TabStop = false;
             // 
@@ -443,9 +465,10 @@ namespace FORM
             this.lblTitleChildForm.AutoSize = true;
             this.lblTitleChildForm.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitleChildForm.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblTitleChildForm.Location = new System.Drawing.Point(52, 28);
+            this.lblTitleChildForm.Location = new System.Drawing.Point(69, 34);
+            this.lblTitleChildForm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitleChildForm.Name = "lblTitleChildForm";
-            this.lblTitleChildForm.Size = new System.Drawing.Size(45, 20);
+            this.lblTitleChildForm.Size = new System.Drawing.Size(55, 24);
             this.lblTitleChildForm.TabIndex = 1;
             this.lblTitleChildForm.Text = "Home";
             // 
@@ -456,34 +479,37 @@ namespace FORM
             this.iconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.Home;
             this.iconCurrentChildForm.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(165)))), ((int)(((byte)(252)))));
             this.iconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconCurrentChildForm.IconSize = 30;
-            this.iconCurrentChildForm.Location = new System.Drawing.Point(22, 25);
+            this.iconCurrentChildForm.IconSize = 37;
+            this.iconCurrentChildForm.Location = new System.Drawing.Point(29, 31);
+            this.iconCurrentChildForm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.iconCurrentChildForm.Name = "iconCurrentChildForm";
-            this.iconCurrentChildForm.Size = new System.Drawing.Size(32, 30);
+            this.iconCurrentChildForm.Size = new System.Drawing.Size(43, 37);
             this.iconCurrentChildForm.TabIndex = 0;
             this.iconCurrentChildForm.TabStop = false;
             // 
             // panelDesktop
             // 
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(200, 76);
+            this.panelDesktop.Location = new System.Drawing.Point(267, 94);
+            this.panelDesktop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(984, 658);
+            this.panelDesktop.Size = new System.Drawing.Size(1312, 809);
             this.panelDesktop.TabIndex = 9;
             // 
             // frmDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(1184, 734);
+            this.ClientSize = new System.Drawing.Size(1579, 903);
             this.ControlBox = false;
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmDashboard";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximize)).EndInit();

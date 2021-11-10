@@ -49,11 +49,19 @@ namespace BUS
            DateTime NgayUpdate)
         {
             return db.MyExecuteNonQuery("spUpdateChiTietHoaDon", CommandType.StoredProcedure, ref err,
-                 new SqlParameter("@ID_HD", ID_HD),
+                new SqlParameter("@ID_HD", ID_HD),
                 new SqlParameter("@ID_Sach", ID_Sach),
                 new SqlParameter("@SoLuong", soluong),
                 new SqlParameter("@NgayTao", NgayTao),
                 new SqlParameter("@NgayUpdate", NgayUpdate));
         }
+
+
+        public DataSet xemCTHD(long ID)
+        {
+            return db.ExecuteQueryDataSet("spXemCTHD", CommandType.StoredProcedure, 
+                new SqlParameter("@ID", ID));
+        }
+
     }
 }

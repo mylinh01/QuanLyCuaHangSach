@@ -131,16 +131,19 @@ namespace FORM
         private void btnInvoice_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(new frmInvoice());
         }
 
         private void btnBookstore_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
+            OpenChildForm(new frmBookstore());
         }
 
         private void btnDiscount_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color4);
+            //OpenChildForm(new frmDiscount());
         }
 
         private void btnMember_Click(object sender, EventArgs e)

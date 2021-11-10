@@ -24,7 +24,7 @@ namespace BUS
             long id_pn,
             long id_sach,
             int soluong,
-            long giatong,
+            long gianhap,
             DateTime ngaytao,
             DateTime ngayupdate)
         {
@@ -32,7 +32,7 @@ namespace BUS
                 new SqlParameter("@ID_PN", id_pn),
                 new SqlParameter("@ID_Sach", id_sach),
                 new SqlParameter("@SoLuong", soluong),
-                new SqlParameter("@GiaTong", giatong),
+                new SqlParameter("@GiaNhap", gianhap ),
                 new SqlParameter("@NgayTao", ngaytao),
                 new SqlParameter("@NgayUpdate", ngayupdate));
         }
@@ -47,16 +47,28 @@ namespace BUS
             long id_sach,
             int soluong,
             long giatong,
-            DateTime ngaytao,
             DateTime ngayupdate)
         {
             return db.MyExecuteNonQuery("spUpdateChiTietPhieuNhap", CommandType.StoredProcedure, ref err,
                 new SqlParameter("@ID_PN", id_pn),
                 new SqlParameter("@ID_Sach", id_sach),
                 new SqlParameter("@SoLuong", soluong),
-                new SqlParameter("@GiaTong", giatong),
-                new SqlParameter("@NgayTao", ngaytao),
+                new SqlParameter("@GiaNhap", giatong),
                 new SqlParameter("@NgayUpdate", ngayupdate));
         }
+        public DataSet xemCTPN(long ID)
+        {
+            return db.ExecuteQueryDataSet("spXemChiTietPhieuNhap", CommandType.StoredProcedure,
+                new SqlParameter("@ID", ID));
+        }
+
+        /*
+        public DataSet xemCTHD(long ID_HD)
+        {
+            return db.ExecuteQueryDataSet("select * from dbo.funXemChiTietPhieuNhap(@ID)", CommandType.StoredProcedure,
+                new SqlParameter("@ID", ID_HD));
+        }
+       
+        */
     }
 }

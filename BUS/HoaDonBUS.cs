@@ -81,5 +81,9 @@ namespace BUS
                 new SqlParameter("@NgayTao", NgayTao),
                 new SqlParameter("@NgayUpdate", NgayUpdate));
         }
+        public DataSet findHoaDon(DateTime NgayMua)
+        {
+            return db.ExecuteQueryDataSet("spFindHoaDon", CommandType.StoredProcedure, new SqlParameter("@NgayMua", NgayMua));
+        }
     }
 }

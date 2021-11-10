@@ -183,16 +183,17 @@ namespace FORM
                 double ggtv = Convert.ToDouble(busThanhVien.getGiamGiaByIDThanhVien(id_tv).Tables[0].Rows[0]["MucUuDai"].ToString());
                 giamgia += ggtv;
             }
+            /*
             double ggngay = 0;
             DateTime time = DateTime.Now;
             ds = busGiamGia.getGiamGiaByNgay(time);
-            ggngay = Convert.ToDouble(ds.Tables[0].Rows[0]["PhanTramGG"]);
+            //ggngay = Convert.ToDouble(ds.Tables[0].Rows[0]["PhanTramGG"]);
             // lấy id của mã giảm giá để lưu xuống database
             idgg = Convert.ToInt32(ds.Tables[0].Rows[0]["ID"]);
             //
             giamgia += ggngay;
             if (giamgia > 100) giamgia = 100;
-            lbGiamGia.Text = giamgia.ToString();
+            lbGiamGia.Text = giamgia.ToString();*/
         }
 
         private void cbNhanVien_SelectedValueChanged(object sender, EventArgs e)
@@ -284,6 +285,6 @@ namespace FORM
 
         }
 
-       
+
     }
 }

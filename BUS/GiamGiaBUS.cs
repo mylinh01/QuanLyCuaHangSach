@@ -32,15 +32,13 @@ namespace BUS
             DateTime NgayBatDau,
             DateTime NgayKetThuc,
             float PhanTramGG,
-            DateTime NgayTao,
-            DateTime NgayUpdate)
+            DateTime NgayTao)
         {
             return db.MyExecuteNonQuery("spInsertGiamGia", CommandType.StoredProcedure, ref err,
                 new SqlParameter("@NgayBatDau", NgayBatDau),
                 new SqlParameter("@NgayKetThuc", NgayKetThuc),
                 new SqlParameter("@PhanTramGG", PhanTramGG),
-                new SqlParameter("@NgayTao", NgayTao),
-                new SqlParameter("@NgayUpdate", NgayUpdate));
+                new SqlParameter("@NgayTao", NgayTao));
         }
         public bool deleteGiamGia(ref string err,
             long ID)
@@ -53,7 +51,6 @@ namespace BUS
             DateTime NgayBatDau,
             DateTime NgayKetThuc,
             float PhanTramGG,
-            DateTime NgayTao,
             DateTime NgayUpdate)
         {
             return db.MyExecuteNonQuery("spUpdateGiamGia", CommandType.StoredProcedure, ref err,
@@ -61,7 +58,6 @@ namespace BUS
                 new SqlParameter("@NgayBatDau", NgayBatDau),
                 new SqlParameter("@NgayKetThuc", NgayKetThuc),
                 new SqlParameter("@PhanTramGG", PhanTramGG),
-                new SqlParameter("@NgayTao", NgayTao),
                 new SqlParameter("@NgayUpdate", NgayUpdate));
         }
     }

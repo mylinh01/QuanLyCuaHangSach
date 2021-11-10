@@ -24,8 +24,13 @@ namespace BUS
         {
             return db.ExecuteQueryDataSet("spFindLoaiSachByIDAndName", CommandType.StoredProcedure);
         }
+        public DataSet getNameAndIdLoaiSach()
+        {
+            return db.ExecuteQueryDataSet("spGetNameAndIdLoaiSach", CommandType.StoredProcedure);
+        }
+
         public bool insertLoaiSach(ref string err,
-            String TenLoaiSach,
+            string TenLoaiSach,
             DateTime NgayTao,
             DateTime NgayUpdate)
         {
@@ -40,19 +45,16 @@ namespace BUS
             return db.MyExecuteNonQuery("spDeleteLoaiSach", CommandType.StoredProcedure, ref err,
                 new SqlParameter("@ID", ID));
         }
+        
         public bool updateLoaiSach(ref string err,
             long ID,
-            String TenLoaiSach,
-            DateTime NgayTao,
+            string TenLoaiSach,
             DateTime NgayUpdate)
         {
             return db.MyExecuteNonQuery("spUpdateLoaiSach", CommandType.StoredProcedure, ref err,
                 new SqlParameter("@ID", ID),
                 new SqlParameter("@TenLoaiSach", TenLoaiSach),
-                new SqlParameter("@NgayTao", NgayTao),
-           
                 new SqlParameter("@NgayUpdate", NgayUpdate));
         }
-     
     }
 }
