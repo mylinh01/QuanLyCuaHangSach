@@ -413,11 +413,11 @@ namespace FORM
             // 
             // txtTimSach
             // 
-            this.txtTimSach.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimSach.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTimSach.Location = new System.Drawing.Point(356, 24);
             this.txtTimSach.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimSach.Name = "txtTimSach";
-            this.txtTimSach.Size = new System.Drawing.Size(527, 28);
+            this.txtTimSach.Size = new System.Drawing.Size(527, 30);
             this.txtTimSach.TabIndex = 44;
             // 
             // groupBox1
@@ -453,10 +453,10 @@ namespace FORM
             this.cbNXB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbNXB.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbNXB.Enabled = false;
-            this.cbNXB.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbNXB.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbNXB.Location = new System.Drawing.Point(792, 124);
             this.cbNXB.Name = "cbNXB";
-            this.cbNXB.Size = new System.Drawing.Size(380, 27);
+            this.cbNXB.Size = new System.Drawing.Size(380, 31);
             this.cbNXB.TabIndex = 29;
             // 
             // cbTacGia
@@ -464,10 +464,10 @@ namespace FORM
             this.cbTacGia.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbTacGia.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbTacGia.Enabled = false;
-            this.cbTacGia.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTacGia.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTacGia.Location = new System.Drawing.Point(168, 121);
             this.cbTacGia.Name = "cbTacGia";
-            this.cbTacGia.Size = new System.Drawing.Size(380, 27);
+            this.cbTacGia.Size = new System.Drawing.Size(380, 31);
             this.cbTacGia.TabIndex = 28;
             // 
             // cbLoaiSach
@@ -475,20 +475,20 @@ namespace FORM
             this.cbLoaiSach.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cbLoaiSach.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbLoaiSach.Enabled = false;
-            this.cbLoaiSach.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLoaiSach.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLoaiSach.Location = new System.Drawing.Point(792, 76);
             this.cbLoaiSach.Name = "cbLoaiSach";
-            this.cbLoaiSach.Size = new System.Drawing.Size(380, 27);
+            this.cbLoaiSach.Size = new System.Drawing.Size(380, 31);
             this.cbLoaiSach.TabIndex = 27;
             // 
             // txtGia
             // 
             this.txtGia.Enabled = false;
-            this.txtGia.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGia.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGia.Location = new System.Drawing.Point(792, 166);
             this.txtGia.Margin = new System.Windows.Forms.Padding(4);
             this.txtGia.Name = "txtGia";
-            this.txtGia.Size = new System.Drawing.Size(380, 27);
+            this.txtGia.Size = new System.Drawing.Size(380, 30);
             this.txtGia.TabIndex = 25;
             // 
             // label9
@@ -506,11 +506,11 @@ namespace FORM
             // txtIDSach
             // 
             this.txtIDSach.Enabled = false;
-            this.txtIDSach.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDSach.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIDSach.Location = new System.Drawing.Point(168, 28);
             this.txtIDSach.Margin = new System.Windows.Forms.Padding(4);
             this.txtIDSach.Name = "txtIDSach";
-            this.txtIDSach.Size = new System.Drawing.Size(176, 27);
+            this.txtIDSach.Size = new System.Drawing.Size(176, 30);
             this.txtIDSach.TabIndex = 24;
             // 
             // label8
@@ -552,21 +552,20 @@ namespace FORM
             // txtTenSach
             // 
             this.txtTenSach.Enabled = false;
-            this.txtTenSach.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenSach.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenSach.Location = new System.Drawing.Point(168, 73);
             this.txtTenSach.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenSach.Name = "txtTenSach";
-            this.txtTenSach.Size = new System.Drawing.Size(380, 27);
+            this.txtTenSach.Size = new System.Drawing.Size(380, 30);
             this.txtTenSach.TabIndex = 12;
             // 
             // txtSoLuong
             // 
-            this.txtSoLuong.Enabled = false;
-            this.txtSoLuong.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoLuong.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoLuong.Location = new System.Drawing.Point(168, 168);
             this.txtSoLuong.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Size = new System.Drawing.Size(380, 27);
+            this.txtSoLuong.Size = new System.Drawing.Size(380, 30);
             this.txtSoLuong.TabIndex = 13;
             // 
             // label4
@@ -769,21 +768,21 @@ namespace FORM
             // txtIDLS
             // 
             this.txtIDLS.Enabled = false;
-            this.txtIDLS.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDLS.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIDLS.Location = new System.Drawing.Point(45, 90);
             this.txtIDLS.Margin = new System.Windows.Forms.Padding(4);
             this.txtIDLS.Name = "txtIDLS";
-            this.txtIDLS.Size = new System.Drawing.Size(415, 27);
+            this.txtIDLS.Size = new System.Drawing.Size(415, 30);
             this.txtIDLS.TabIndex = 24;
             // 
             // txtTenLS
             // 
             this.txtTenLS.Enabled = false;
-            this.txtTenLS.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenLS.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenLS.Location = new System.Drawing.Point(45, 190);
             this.txtTenLS.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenLS.Name = "txtTenLS";
-            this.txtTenLS.Size = new System.Drawing.Size(415, 27);
+            this.txtTenLS.Size = new System.Drawing.Size(415, 30);
             this.txtTenLS.TabIndex = 12;
             // 
             // label26
@@ -856,21 +855,21 @@ namespace FORM
             // txtIDTG
             // 
             this.txtIDTG.Enabled = false;
-            this.txtIDTG.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDTG.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIDTG.Location = new System.Drawing.Point(45, 90);
             this.txtIDTG.Margin = new System.Windows.Forms.Padding(4);
             this.txtIDTG.Name = "txtIDTG";
-            this.txtIDTG.Size = new System.Drawing.Size(415, 27);
+            this.txtIDTG.Size = new System.Drawing.Size(415, 30);
             this.txtIDTG.TabIndex = 24;
             // 
             // txtTenTG
             // 
             this.txtTenTG.Enabled = false;
-            this.txtTenTG.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenTG.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenTG.Location = new System.Drawing.Point(45, 190);
             this.txtTenTG.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenTG.Name = "txtTenTG";
-            this.txtTenTG.Size = new System.Drawing.Size(415, 27);
+            this.txtTenTG.Size = new System.Drawing.Size(415, 30);
             this.txtTenTG.TabIndex = 12;
             // 
             // label15
@@ -1184,7 +1183,7 @@ namespace FORM
             // 
             this.txtDiaChi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDiaChi.Enabled = false;
-            this.txtDiaChi.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiaChi.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChi.Location = new System.Drawing.Point(127, 203);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(340, 69);
@@ -1194,11 +1193,11 @@ namespace FORM
             // txtIDNXB
             // 
             this.txtIDNXB.Enabled = false;
-            this.txtIDNXB.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDNXB.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIDNXB.Location = new System.Drawing.Point(127, 51);
             this.txtIDNXB.Margin = new System.Windows.Forms.Padding(4);
             this.txtIDNXB.Name = "txtIDNXB";
-            this.txtIDNXB.Size = new System.Drawing.Size(340, 27);
+            this.txtIDNXB.Size = new System.Drawing.Size(340, 30);
             this.txtIDNXB.TabIndex = 24;
             // 
             // label14
@@ -1228,21 +1227,21 @@ namespace FORM
             // txtSdt
             // 
             this.txtSdt.Enabled = false;
-            this.txtSdt.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSdt.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSdt.Location = new System.Drawing.Point(127, 153);
             this.txtSdt.Margin = new System.Windows.Forms.Padding(4);
             this.txtSdt.Name = "txtSdt";
-            this.txtSdt.Size = new System.Drawing.Size(340, 27);
+            this.txtSdt.Size = new System.Drawing.Size(340, 30);
             this.txtSdt.TabIndex = 22;
             // 
             // txtTenNXB
             // 
             this.txtTenNXB.Enabled = false;
-            this.txtTenNXB.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenNXB.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenNXB.Location = new System.Drawing.Point(127, 102);
             this.txtTenNXB.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenNXB.Name = "txtTenNXB";
-            this.txtTenNXB.Size = new System.Drawing.Size(340, 27);
+            this.txtTenNXB.Size = new System.Drawing.Size(340, 30);
             this.txtTenNXB.TabIndex = 12;
             // 
             // label20

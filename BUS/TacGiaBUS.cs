@@ -21,10 +21,6 @@ namespace BUS
         {
             return db.ExecuteQueryDataSet("spGetTacGia", CommandType.StoredProcedure);
         }
-        public DataSet getNameAndIdTacGia()
-        {
-            return db.ExecuteQueryDataSet("spGetNameAndIdTacGia", CommandType.StoredProcedure);
-        }
         public bool insertTacGia(ref string err,
             string tentacgia,
             DateTime ngaytao,

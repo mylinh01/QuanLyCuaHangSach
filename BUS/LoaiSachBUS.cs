@@ -24,11 +24,6 @@ namespace BUS
         {
             return db.ExecuteQueryDataSet("spFindLoaiSachByIDAndName", CommandType.StoredProcedure);
         }
-        public DataSet getNameAndIdLoaiSach()
-        {
-            return db.ExecuteQueryDataSet("spGetNameAndIdLoaiSach", CommandType.StoredProcedure);
-        }
-
         public bool insertLoaiSach(ref string err,
             string TenLoaiSach,
             DateTime NgayTao,

@@ -21,10 +21,6 @@ namespace BUS
         {
             return db.ExecuteQueryDataSet("spGetNXB", CommandType.StoredProcedure);
         }
-        public DataSet getNameAndIdNXB()
-        {
-            return db.ExecuteQueryDataSet("spGetNameAndIdNXB", CommandType.StoredProcedure);
-        }
         public bool insertNXB(ref string err,
             string tennxb,
             string diachi,

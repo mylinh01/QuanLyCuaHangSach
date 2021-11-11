@@ -59,7 +59,7 @@ namespace BUS
 
         public DataSet xemCTHD(long ID)
         {
-            return db.ExecuteQueryDataSet("spXemCTHD", CommandType.StoredProcedure, 
+            return db.ExecuteQueryDataSet("spXemChiTietHoaDon", CommandType.StoredProcedure, 
                 new SqlParameter("@ID", ID));
         }
 
