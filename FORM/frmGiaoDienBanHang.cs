@@ -26,9 +26,11 @@ namespace FORM
         private long id_tv;
         private long idgg;
         private int idhd;
-        public frmGiaoDienBanHang()
+
+        public frmGiaoDienBanHang(string id)
         {
             InitializeComponent();
+            this.id_nv = long.Parse(id);
         }
 
         private void frmGiaoDienBanHang_Load(object sender, EventArgs e)
@@ -41,7 +43,6 @@ namespace FORM
             cbThanhVien.DataSource = busThanhVien.getNameAndIdThanhVien().Tables[0];
             cbThanhVien.DisplayMember = "HoTen";
             cbThanhVien.ValueMember = "ID";
-
         }
 
         private void loadCbNhanVien()
@@ -49,6 +50,7 @@ namespace FORM
             cbNhanVien.DataSource = busNhanVien.getNameAndIdNhanVien().Tables[0];
             cbNhanVien.DisplayMember = "HoTen";
             cbNhanVien.ValueMember = "ID";
+
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
@@ -163,6 +165,8 @@ namespace FORM
             dtgvTimKiem.AllowUserToAddRows = false;
             //cbThanhVien.SelectedItem =null;
             //cbNhanVien.SelectedItem = null;
+
+            //cbNhanVien.SelectedValue = id_nv;
             dtgvHoaDon.Rows.Clear();
             //cbThanhVien.SelectedIndex = 0;
             tinhGiamGia();
@@ -186,9 +190,17 @@ namespace FORM
             double ggngay = 0;
             DateTime time = DateTime.Now;
             ds = busGiamGia.getGiamGiaByNgay(time);
-            ggngay = Convert.ToDouble(ds.Tables[0].Rows[0]["PhanTramGG"]);
+            try
+            {
+                ggngay = Convert.ToDouble(ds.Tables[0].Rows[0]["PhanTramGG"]);
+                idgg = Convert.ToInt32(ds.Tables[0].Rows[0]["ID"]);
+            }
+            catch
+            {
+                ggngay = 0;
+                idgg = 0;
+            }
             // lấy id của mã giảm giá để lưu xuống database
-            idgg = Convert.ToInt32(ds.Tables[0].Rows[0]["ID"]);
             //
             giamgia += ggngay;
             if (giamgia > 100) giamgia = 100;
@@ -204,8 +216,6 @@ namespace FORM
                 // lấy id của nhân viên  để lưu
                 id_nv = Convert.ToInt64(cbNhanVien.SelectedValue.ToString());
             }
-
-
         }
         private void cbThanhVien_SelectedValueChanged(object sender, EventArgs e)
         {
@@ -239,7 +249,7 @@ namespace FORM
                 MessageBox.Show("Lưu hóa đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 loadData();
             }
-            catch (Exception ee)
+            catch (Exception)
             {
                 //throw ee;
                 MessageBox.Show("Xuất hóa đơn thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -253,8 +263,8 @@ namespace FORM
             string err = "";
             DateTime ngaytao = DateTime.Now;
             DateTime ngayupdate = DateTime.Now;
-            if (!busHoaDon.insertHoaDon(ref err, idnv, idtv, idgg, ngaytao, thanhtien, ngaytao, ngayupdate)) ;
-            //MessageBox.Show(err);
+            if (!busHoaDon.insertHoaDon(ref err, idnv, idtv, idgg, ngaytao, thanhtien, ngaytao, ngayupdate))
+                MessageBox.Show(err);
 
 
         }
@@ -271,8 +281,8 @@ namespace FORM
                     DateTime ngaytao = DateTime.Now;
                     DateTime ngayupdate = DateTime.Now;
                     int idsach = Convert.ToInt32(busSach.getIDSachByName(tensach).Tables[0].Rows[0]["ID"].ToString());
-                    if (!busChiTietHoaDon.insertChiTietHoaDon(ref err, idhd, idsach, soluong, ngaytao, ngayupdate)) ;
-                    //MessageBox.Show(err);
+                    if (!busChiTietHoaDon.insertChiTietHoaDon(ref err, idhd, idsach, soluong, ngaytao, ngayupdate))
+                        MessageBox.Show(err);
 
                 }
             }

@@ -61,6 +61,7 @@ namespace FORM
                     btn.Enabled = isEnable;
                 }
             }
+            dgvThanhVien.Enabled = isEnable;
             btnSave.Enabled = !isEnable;
             btnCancel.Enabled = !isEnable;
         }

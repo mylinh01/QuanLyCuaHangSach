@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS;
 using FontAwesome.Sharp;
 
 namespace FORM
@@ -18,13 +20,51 @@ namespace FORM
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentChildForm;
+        NhanVienBUS nhanVienBUS = new NhanVienBUS();
 
-        public frmDashboard()
+        //
+        private string name;
+        private string id;
+        private string role;
+
+        public frmDashboard(string id)
         {
+            this.id = id;
+            DataSet ds = nhanVienBUS.getNhanVienByID(int.Parse(id));
+
+            this.role = ds.Tables[0].Rows[0][1].ToString();
+            this.name = ds.Tables[0].Rows[0][4].ToString();
+            // MessageBox.Show(id + role + name + picture);
             InitializeComponent();
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
             panelMenu.Controls.Add(leftBorderBtn);
+            try
+            {
+                iconButtonName.Text = name;
+                pictureBox1.Image = ByteArrayToImage((byte[])ds.Tables[0].Rows[0][8]);
+            }
+            catch
+            {
+                MessageBox.Show("Không cập nhập được Image");
+            }
+
+        }
+        private byte[] ImageToByteArray(Image img)
+        {
+            MemoryStream ms = new MemoryStream();
+            img.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+            return ms.ToArray();
+        }
+        private byte[] PathToByteArray(string path)
+        {
+            return File.ReadAllBytes(path);
+        }
+        private Image ByteArrayToImage(byte[] b)
+        {
+            MemoryStream ms = new MemoryStream(b);
+            Image img = Image.FromStream(ms, true);
+            return img;
         }
 
         #region init button control box and set title of form center
@@ -64,7 +104,7 @@ namespace FORM
             else
                 WindowState = FormWindowState.Normal;
         }
-        
+
         #endregion
 
         //Structs
@@ -125,22 +165,25 @@ namespace FORM
         private void btnSale_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new frmGiaoDienBanHang());
+            OpenChildForm(new frmGiaoDienBanHang(id));
         }
 
         private void btnInvoice_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+            OpenChildForm(new frmInvoice());
         }
 
         private void btnBookstore_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
+            OpenChildForm(new frmBookstore());
         }
 
         private void btnDiscount_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color4);
+            OpenChildForm(new frmDiscount());
         }
 
         private void btnMember_Click(object sender, EventArgs e)
@@ -158,6 +201,7 @@ namespace FORM
         private void btnStaff_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color7);
+            OpenChildForm(new frmQuanLiNhanVien());
         }
 
         private void btnSetting_Click(object sender, EventArgs e)
@@ -218,6 +262,14 @@ namespace FORM
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void iconPictureBox3_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn đăng xuất?", "Đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
 }

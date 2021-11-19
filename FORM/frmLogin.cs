@@ -48,8 +48,20 @@ namespace FORM
         {
             string username = txtUsername.Text;
             string password = txtPassword.Text;
-            
-
+            DataSet ds = nhanVienBUS.getNhanVienByUsernameAndPassword(username, password);
+            try 
+            {
+                this.Hide();
+                new frmDashboard(ds.Tables[0].Rows[0][0].ToString()).ShowDialog();
+                //new frmDashboard(ds.Tables[0].Rows[0][0].ToString(), "", "", new byte[9])
+                txtUsername.Clear();
+                txtPassword.Clear();
+                this.Show();
+            } 
+            catch
+            {
+                MessageBox.Show("Không đúng tài khoản hoặc mật khẩu!");
+            }
         }
     }
 }

@@ -13,6 +13,7 @@ namespace BUS
     {
 
         DAL_QLCuaHangSach db;
+
         public GiamGiaBUS()
         {
             db = new DAL_QLCuaHangSach();
@@ -22,46 +23,58 @@ namespace BUS
         {
             return db.ExecuteQueryDataSet("spGetGiamGia", CommandType.StoredProcedure);
         }
+
         public DataSet getGiamGiaByNgay(DateTime ngay)
         {
-            return db.ExecuteQueryDataSet("spGetGiamGiaByNgay", CommandType.StoredProcedure, new SqlParameter("@ngay", ngay));
-            //return db.ExecuteQueryDataSet("SELECT ID, NgayBatDau, NgayKetThuc, PhanTramGG" +
-            //    " FROM  GiamGia WHERE NgayBatDau <= '" + ngay + "' AND  '" + ngay + "' <= NgayKetThuc", CondType.Text);mm
+            return db.ExecuteQueryDataSet("spGetGiamGiaByNgay", CommandType.StoredProcedure,
+                new SqlParameter("@ngay", ngay));
         }
-        public bool insertGiamGia(ref string err,
+
+        public bool insertGiamGia(
+            string TieuDe,
+            float PhanTramGG,
             DateTime NgayBatDau,
             DateTime NgayKetThuc,
-            float PhanTramGG,
+            string GhiChu,
             DateTime NgayTao,
-            DateTime NgayUpdate)
+            DateTime NgayUpdate
+            )
         {
-            return db.MyExecuteNonQuery("spInsertGiamGia", CommandType.StoredProcedure, ref err,
+            return db.MyExecuteNonQueryNotReturnErr("spInsertGiamGia", CommandType.StoredProcedure,
+                new SqlParameter("@TieuDe", TieuDe),
+                new SqlParameter("@PhanTramGG", PhanTramGG),
                 new SqlParameter("@NgayBatDau", NgayBatDau),
                 new SqlParameter("@NgayKetThuc", NgayKetThuc),
-                new SqlParameter("@PhanTramGG", PhanTramGG),
+                new SqlParameter("@GhiChu", GhiChu),
                 new SqlParameter("@NgayTao", NgayTao),
                 new SqlParameter("@NgayUpdate", NgayUpdate));
         }
-        public bool deleteGiamGia(ref string err,
+
+        public bool deleteGiamGia(
+            ref string err,
             long ID)
         {
             return db.MyExecuteNonQuery("spDeleteGiamGia", CommandType.StoredProcedure, ref err,
                 new SqlParameter("@ID", ID));
         }
-        public bool updateLoaiThanhVien(ref string err,
+
+        public bool updateGiamGia(
             long ID,
+            string TieuDe,
+            float PhanTramGG,
             DateTime NgayBatDau,
             DateTime NgayKetThuc,
-            float PhanTramGG,
-            DateTime NgayTao,
-            DateTime NgayUpdate)
+            string GhiChu,
+            DateTime NgayUpdate
+            )
         {
-            return db.MyExecuteNonQuery("spUpdateGiamGia", CommandType.StoredProcedure, ref err,
+            return db.MyExecuteNonQueryNotReturnErr("spUpdateGiamGia", CommandType.StoredProcedure,
                 new SqlParameter("@ID", ID),
+                new SqlParameter("@TieuDe", TieuDe),
+                new SqlParameter("@PhanTramGG", PhanTramGG),
                 new SqlParameter("@NgayBatDau", NgayBatDau),
                 new SqlParameter("@NgayKetThuc", NgayKetThuc),
-                new SqlParameter("@PhanTramGG", PhanTramGG),
-                new SqlParameter("@NgayTao", NgayTao),
+                new SqlParameter("@GhiChu", GhiChu),
                 new SqlParameter("@NgayUpdate", NgayUpdate));
         }
     }

@@ -11,7 +11,9 @@ namespace BUS
 {
     public class LoaiThanhVienBUS
     {
+
         DAL_QLCuaHangSach db;
+
         public LoaiThanhVienBUS()
         {
             db = new DAL_QLCuaHangSach();
@@ -22,7 +24,8 @@ namespace BUS
             return db.ExecuteQueryDataSet("spGetLoaiThanhVien", CommandType.StoredProcedure);
         }
 
-        public bool insertLoaiThanhVien(ref string err,
+        public bool insertLoaiThanhVien(
+            ref string err,
             string tenloaiTV,
             float mucuudai,
             DateTime ngaytao,
@@ -34,24 +37,25 @@ namespace BUS
                 new SqlParameter("@NgayTao", ngaytao),
                 new SqlParameter("@NgayUpdate", ngayupdate));
         }
-        public bool deleteLoaiThanhVien(ref string err,
+        public bool deleteLoaiThanhVien(
+            ref string err,
             string id)
         {
             return db.MyExecuteNonQuery("spDeleteLoaiThanhVien", CommandType.StoredProcedure, ref err,
                 new SqlParameter("@ID", id));
         }
-        public bool updateLoaiThanhVien(ref string err,
+
+        public bool updateLoaiThanhVien(
+            ref string err,
             long id,
             string tenloaiTV,
             float mucuudai,
-            DateTime ngaytao,
             DateTime ngayupdate)
         {
             return db.MyExecuteNonQuery("spUpdateLoaiThanhVien", CommandType.StoredProcedure, ref err,
                 new SqlParameter("@ID", id),
                 new SqlParameter("@TenLoaiTV", tenloaiTV),
                 new SqlParameter("@MucUuDai", mucuudai),
-                new SqlParameter("@NgayTao", ngaytao),
                 new SqlParameter("@NgayUpdate", ngayupdate));
         }
     }

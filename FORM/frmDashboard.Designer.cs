@@ -47,7 +47,7 @@ namespace FORM
             this.btnInvoice = new FontAwesome.Sharp.IconButton();
             this.btnSale = new FontAwesome.Sharp.IconButton();
             this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.iconButtonName = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
@@ -151,6 +151,7 @@ namespace FORM
             this.iconPictureBox3.Size = new System.Drawing.Size(32, 32);
             this.iconPictureBox3.TabIndex = 9;
             this.iconPictureBox3.TabStop = false;
+            this.iconPictureBox3.Click += new System.EventHandler(this.iconPictureBox3_Click);
             // 
             // btnSetting
             // 
@@ -359,7 +360,7 @@ namespace FORM
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.White;
-            this.panelTitleBar.Controls.Add(this.iconButton1);
+            this.panelTitleBar.Controls.Add(this.iconButtonName);
             this.panelTitleBar.Controls.Add(this.pictureBox1);
             this.panelTitleBar.Controls.Add(this.iconPictureBox2);
             this.panelTitleBar.Controls.Add(this.iconPictureBox1);
@@ -372,28 +373,28 @@ namespace FORM
             this.panelTitleBar.TabIndex = 8;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
-            // iconButton1
+            // iconButtonName
             // 
-            this.iconButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconButton1.AutoSize = true;
-            this.iconButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.iconButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.BookOpen;
-            this.iconButton1.IconColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 25;
-            this.iconButton1.Location = new System.Drawing.Point(812, 18);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(160, 37);
-            this.iconButton1.TabIndex = 5;
-            this.iconButton1.Text = "Do Quoc Viet";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButtonName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconButtonName.AutoSize = true;
+            this.iconButtonName.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.iconButtonName.FlatAppearance.BorderSize = 0;
+            this.iconButtonName.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.iconButtonName.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.iconButtonName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButtonName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButtonName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.iconButtonName.IconChar = FontAwesome.Sharp.IconChar.BookOpen;
+            this.iconButtonName.IconColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.iconButtonName.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButtonName.IconSize = 25;
+            this.iconButtonName.Location = new System.Drawing.Point(812, 18);
+            this.iconButtonName.Name = "iconButtonName";
+            this.iconButtonName.Size = new System.Drawing.Size(160, 37);
+            this.iconButtonName.TabIndex = 5;
+            this.iconButtonName.Text = "Do Quoc Viet";
+            this.iconButtonName.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.iconButtonName.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -519,7 +520,7 @@ namespace FORM
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelDesktop;
         private System.Windows.Forms.PictureBox btnHome;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton iconButtonName;
         private System.Windows.Forms.PictureBox pictureBox1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
